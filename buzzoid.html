@@ -1,0 +1,2117 @@
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+<title>Buy Instagram Followers - 100% Real &amp; Instant | Now $2.97</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&#038;display=swap" /></noscript><style id="rocket-critical-css">[class^=logo]{font-size:0;line-height:0;text-indent:-4004px}body,html{height:100%}body{min-width:320px;background:#f8f9fd;font-size:14px;line-height:1.57;color:#777790;font-weight:400;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;text-size-adjust:none}a{color:inherit;text-decoration:underline}h1{margin-bottom:.785em;color:#3a4250;font-weight:400}h1{font-size:32px;line-height:1.13}p,ul{margin-bottom:1.57em}ul:last-child{margin-bottom:0}@media (max-width:767px){body{font-size:12px}h1{font-size:21px}}*{padding:0;margin:0;outline:0;-webkit-box-sizing:border-box;box-sizing:border-box}:after,:before{-webkit-box-sizing:inherit;box-sizing:inherit}header,nav{display:block}img{max-width:100%}img{border:0}b{font-weight:700}button::-moz-focus-inner{padding:0;border:0}button{font-family:inherit;font-size:inherit;color:inherit;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-smoothing:antialiased}button{text-transform:none}nav ul{list-style:none}.footer .footer__copyright a{color:#83858b;text-decoration:none}.footer .footer__copyright .logo{display:none}.footer .logo{width:32px}@media (max-width:767px){.footer .footer__copyright .logo{display:block;margin:0 auto 24px}.footer .logo{display:none}}.header{position:fixed;left:0;right:0;top:0;padding:0;z-index:12;box-shadow:0 4px 16px 0 rgba(0,0,0,.06)!important;-webkit-box-shadow:0 4px 16px 0 rgba(0,0,0,.06)!important}.header .header__inner{height:80px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%}.header .header__inner .shell--fluid{display:-webkit-box;display:-ms-flexbox;display:flex;padding:0 32px;width:100%}.header .plug__bar{background:#3964e7;color:#fff;position:relative;overflow:hidden;display:table;width:100%}.header .plug__mini{display:table-row}.header .plug__bar .plug__inner{padding-top:9px;font-size:18px;text-align:center;display:table-cell;width:810px;position:relative}.header .plug__bar .plug__left,.header .plug__bar .plug__right{height:56px;width:auto;display:table-cell;position:relative;vertical-align:bottom}.header .plug__bar .plug__left:after{content:"";background:url(https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/plug-left.svg) 100% 0 no-repeat;position:absolute;top:-8px;left:0;right:0;bottom:0}.header .plug__bar .plug__right:after{content:"";background:url(https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/plug-right.svg) no-repeat;position:absolute;top:-8px;left:0;right:0;bottom:0}.header .btn.btn--plug{padding:6px 8px;border:0;-webkit-box-shadow:none;box-shadow:none}.header .btn.btn--white{background:#fff}.header .btn.btn--white>span{color:#3964e7;font-weight:700;letter-spacing:1px}.header .plug__mini p{display:inline-block;margin-right:16px;vertical-align:middle}.header .plug__mini p{line-height:32px;margin-bottom:0}.header .plug__mini .plug__inner{height:56px;overflow:hidden}@media (max-width:767px){.header .plug__mini .plug__inner{text-align:left}.header .plug__mini p{line-height:18px;font-size:16px;margin-left:54px;margin-right:8px;margin-top:3px}.header .plug__mini .btn{width:105px;position:absolute;top:12px;right:16px}}@media (max-width:370px){.header .plug__mini p{margin-right:8px;margin-top:0;font-size:14px;margin-left:50px}.header .plug__mini .btn{width:92px;padding:6px 0;display:none}}@media (max-width:550px){.header .plug__mini .btn{display:none}}.header .plug__mini p.deskText{display:inline-block}.header .plug__mini p.mobiText{display:none}@media (max-width:767px){.header .plug__bar .plug__left,.header .plug__bar .plug__right{display:none}.header .plug__mini p.deskText{display:none!important}.header .plug__mini p.mobiText{display:inline-block}}.header .header__mobile{display:none}.header .logo{width:160px;margin-right:auto}.header .logo img{height:32px!important;width:auto!important}.header .nav,.header .nav>ul>li{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.header .nav>ul>li{padding:0;height:32px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.header .nav>ul>li a{border:none}.header .nav>ul>li:not(:last-child){padding-right:24px}.header .nav>ul>li+li:not(:last-child){padding-left:25px}.header .nav>ul>li+li:not(:last-child):before{content:"";position:absolute;left:0;top:0;height:100%;width:1px;background:#ebebeb}.header .nav a{padding:0;font-size:16px;color:#3d3d3d;font-weight:600}.header .nav>ul>li.highlight a{height:42px;line-height:42px;padding:0 24px;border:1px solid hsla(9,97%,64%,.5);color:#ff603c;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}@media (max-width:1220px){.header .header__inner .shell--fluid{padding:0 20px}.header .logo{width:145px}.header .nav>ul>li:not(:last-child){padding-right:16px}.header .nav>ul>li+li:not(:last-child){padding-left:17px}}@media (max-width:1090px){.header .header__inner{height:64px;position:relative;z-index:9}.header .btn-menu{display:block}.header .header__mobile{position:absolute;left:0;right:0;top:56px;background-color:#fff;display:block;padding:36px 24px 24px;opacity:0;visibility:hidden}.header .header__mobile .nav-head{color:#909090;font-size:12px;font-weight:500;line-height:14px;text-transform:uppercase;letter-spacing:.8px}.header .header__mobile ul>li>a>i{display:-webkit-box;display:-ms-flexbox;display:flex;width:21px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-right:14px}.header .nav{display:none}.header .logo{width:140px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}}body{padding-top:90px;font-family:Source Sans Pro,sans-serif!important}.shell--fluid{max-width:none}.wrapper{background-color:#fff;width:100%;position:relative;overflow:hidden}@media (max-width:767px){body{padding-top:70px}}[class^=btn]{display:inline-block;vertical-align:middle;text-align:center;text-decoration:none;-webkit-appearance:none;-moz-appearance:none;appearance:none}.btn{border:1px solid #bebed2;font-size:0;line-height:0;padding:15px 20px;color:#fff;background-color:#ff603c;border-radius:5px}.btn>span{display:inline-block;vertical-align:middle;text-transform:uppercase;font-size:14px;line-height:20px;font-weight:500}@media (max-width:767px){.btn{padding:8px 10px}.btn>span{font-size:11px}}.btn--flex{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-top:0;padding-bottom:0;line-height:56px;height:56px}.btn--flex>*{display:block}.btn--white{border-color:#bebed2;color:#82868e;background-color:#fff}.btn-lg{height:56px}.btn--modern{border:0;border-radius:6px}.btn--modern span{font-size:20px;font-weight:600;text-transform:none}.btn-menu{display:none;position:relative;font-size:24px;border:none;color:#373737;background:0 0}@media (max-width:767px){.btn-menu{display:block}}[class^=logo]{position:relative;display:inline-block;vertical-align:middle;text-decoration:none}[class^=logo]>img{display:block;width:100%}[class^=nav]>ul{list-style:none;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}[class^=nav] a{display:block;text-decoration:none}.nav>ul>li{font-size:14px;line-height:20px;position:relative;padding:0 4px}.nav>ul>li:first-child{padding-left:0}.nav>ul>li:last-child{padding-right:0}.nav a{padding:8px 12px;border-radius:7px;border:2px solid transparent;color:#2d3037}@media (max-width:985px){.nav>ul>li{font-size:11px;padding:0 2px}.nav a{padding:6px}}.nav-mobile-primary{max-width:640px;margin:0 auto}.nav-mobile-primary ul{list-style:none;padding:0;margin:0 0 40px;display:block}.nav-mobile-primary ul li{display:block}.nav-mobile-primary ul>li>a{display:-webkit-box;display:-ms-flexbox;display:flex;line-height:23px;font-size:18px;font-weight:600;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#3d3d3d;padding:16px 0;border-bottom:1px solid #efefef}.nav-mobile-primary ul>li:last-child>a{border-bottom:0}.nav-mobile-primary a{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.nav-mobile-primary a i{color:#ff603c}.nav-mobile-primary .nav-action{text-align:center}.nav-mobile-primary .nav-action>*+*{margin-top:24px}.nav-mobile-primary .nav-action .link{display:inline-block;font-size:18px;color:#3d3d3d;font-weight:600;opacity:.8}.nav-footer-mobile{display:none}@media (max-width:767px){.nav-footer-mobile{display:block;display:-webkit-box;display:-ms-flexbox;display:flex;position:relative;width:100%}.nav-footer-mobile>ul{display:block;position:relative}.nav-footer-mobile>ul+ul{margin-left:10px}.nav-footer-mobile>ul>li{font-size:12px;line-height:20px;min-width:110px}.nav-footer-mobile a{padding:5px 9px;border:1px solid transparent;display:inline-block;vertical-align:top;border-radius:6px}}.header{-webkit-box-shadow:0 0 5px rgba(0,0,0,.5);box-shadow:0 0 5px rgba(0,0,0,.5);background-color:#fff}img{height:auto;display:inline-block;vertical-align:middle}body.show-upsell-bar{padding-top:136px}@media (max-width:767px){body.show-upsell-bar{padding-top:120px}}.far,.fas{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1}.fa-bars:before{content:"\f0c9"}.fa-comment:before{content:"\f075"}.fa-eye:before{content:"\f06e"}.fa-heart:before{content:"\f004"}.fa-info-circle:before{content:"\f05a"}.fa-star:before{content:"\f005"}.fa-user:before{content:"\f007"}@font-face{font-family:"font awesome 5 pro";font-style:normal;font-weight:300;font-display:swap;src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-light-300.eot);src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-light-300.eot?#iefix) format("embedded-opentype"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-light-300.woff2) format("woff2"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-light-300.woff) format("woff"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-light-300.ttf) format("truetype"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-light-300.svg#fontawesome) format("svg")}@font-face{font-family:"font awesome 5 pro";font-style:normal;font-weight:400;font-display:swap;src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-regular-400.eot);src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-regular-400.woff2) format("woff2"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-regular-400.woff) format("woff"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-regular-400.ttf) format("truetype"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-regular-400.svg#fontawesome) format("svg")}.far{font-family:"font awesome 5 pro"}.far{font-weight:600}@font-face{font-family:"font awesome 5 pro";font-style:normal;font-weight:900;font-display:swap;src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-solid-900.eot);src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-solid-900.woff2) format("woff2"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-solid-900.woff) format("woff"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-solid-900.ttf) format("truetype"),url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/webfonts/fa-solid-900.svg#fontawesome) format("svg")}.fas{font-family:"font awesome 5 pro";font-weight:900}@media (max-width:1090px){.header .header__inner .shell--fluid{justify-content:space-evenly;align-items:center}.header .logo{display:block}.header_review .stars{display:inline-block;vertical-align:middle;height:20px;white-space:nowrap;font-size:12px}.header_review .stars>span{display:inline-block;background:#00b67a;color:#fff;height:20px;width:20px;line-height:20px;overflow:hidden;text-align:center;border-radius:5px}.header_review .stars>span:not(:last-child){margin-right:2px}.header_review_link>span{font-size:20px;display:inline-block;margin-right:5px;line-height:1;vertical-align:middle;color:#333;font-weight:400}.header_review{display:block;flex-grow:1;text-align:center;white-space:nowrap;padding:0 3%}}@media (min-width:1091px){.header__inner div.header_review{display:none}}.aff{width:1580px;margin:0 auto;padding:80px 20px;color:#000;font-family:Source Sans Pro,sans-serif!important}.aff p,.aff h1{color:#000;margin:0;padding:0}.aff-btn{display:inline-block;color:#fff;border-radius:46px;font-weight:600;font-size:27px;line-height:32px;padding:21px 41px;text-decoration:none}.aff-btn_orange{background:#fd6658}.aff-btn_black{background:#000}.aff-hero{display:flex;justify-content:space-between;align-items:center;margin-bottom:338px}.aff-hero_left{width:762px;flex-shrink:0}.aff-hero_right{width:100%;max-width:690px;margin-left:100px}.aff-hero_action a{margin-right:14px}.aff-hero h1{font-weight:700;font-size:99.1311px;line-height:98px;margin-bottom:52px}.aff-hero p{font-weight:400;font-size:32.4336px;line-height:44px;padding:0;margin:0;margin-bottom:43px}</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="rocketlazyloadscript">
+        var marker = '1683709571';
+    </script>
+<meta name="twitter:image" content="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/buy-instagram-followers.png" />
+<meta property="og:image:secure_url" content="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/buy-instagram-followers.png" />
+<meta property="og:image" content="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/buy-instagram-followers.png" />
+<meta name="theme-color" content="#ff603c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="//cdnjs.cloudflare.com">
+<link rel="preconnect" href="//www.googletagmanager.com">
+<link rel="preconnect" href="//www.googleoptimize.com">
+
+<script type="rocketlazyloadscript"> window.dataLayer = window.dataLayer || []; </script>
+ <style>.async-hide { opacity: 0 !important} </style> <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date; h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')}; (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c; })(window,document.documentElement,'async-hide','dataLayer',4000, {'GTM-MVXHW44':true});</script>
+
+
+<script src="https://www.googleoptimize.com/optimize.js?id=GTM-MVXHW44" defer></script>
+
+
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-WZMH4S8');</script>
+
+<link rel="shortcut icon" href="https://buzzoid.com/wp-content/themes/buzz/favico.png" />
+<link rel="shortcut icon" type="image/x-icon" href="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/favicon.ico">
+<link data-minify="1" rel="preload" type="text/css" href="https://buzzoid.com/wp-content/cache/min/1/wp-content/themes/buzz/v2/assets/css/bundle_v2.css?ver=1682121842" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')">
+<link data-minify="1" rel="preload" type="text/css" href="https://buzzoid.com/wp-content/cache/min/1/wp-content/themes/buzz/v2/assets/css/all.css?ver=1682121842" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')">
+<link data-minify="1" rel="preload" type="text/css" href="https://buzzoid.com/wp-content/cache/min/1/wp-content/themes/buzz/v2/assets/css/changes.css?ver=1682121842" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')">
+<meta name='robots' content='index, follow, max-image-preview:large' />
+
+<meta name="description" content="Buy Instagram followers from Buzzoid for as cheap as $2.97. Instant delivery, real followers, and 24/7 support. Rated world&#039;s #1 IG service since 2012." />
+<link rel="canonical" href="https://buzzoid.com/buy-instagram-followers/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Buzzoid Followers" />
+<meta property="og:description" content="Buy Instagram followers from Buzzoid for as cheap as $2.97. Instant delivery, real followers, and 24/7 support. Rated world&#039;s #1 IG service since 2012." />
+<meta property="og:url" content="https://buzzoid.com/buy-instagram-followers/" />
+<meta property="og:site_name" content="Buzzoid" />
+<meta property="article:modified_time" content="2023-01-13T09:45:25+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://buzzoid.com/buy-instagram-followers/","url":"https://buzzoid.com/buy-instagram-followers/","name":"Buy Instagram Followers - 100% Real & Instant | Now $2.97","isPartOf":{"@id":"https://buzzoid.com/#website"},"datePublished":"2014-05-06T01:46:26+00:00","dateModified":"2023-01-13T09:45:25+00:00","description":"Buy Instagram followers from Buzzoid for as cheap as $2.97. Instant delivery, real followers, and 24/7 support. Rated world's #1 IG service since 2012.","breadcrumb":{"@id":"https://buzzoid.com/buy-instagram-followers/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://buzzoid.com/buy-instagram-followers/"]}]},{"@type":"BreadcrumbList","@id":"https://buzzoid.com/buy-instagram-followers/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://buzzoid.com/"},{"@type":"ListItem","position":2,"name":"Buy Instagram Followers"}]},{"@type":"WebSite","@id":"https://buzzoid.com/#website","url":"https://buzzoid.com/","name":"Buzzoid","description":"Buy Instagram Likes and Followers","publisher":{"@id":"https://buzzoid.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://buzzoid.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://buzzoid.com/#organization","name":"Buzzoid","url":"https://buzzoid.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://buzzoid.com/#/schema/logo/image/","url":"https://buzzoid.com/wp-content/uploads/2015/12/buzzoid-logo.png","contentUrl":"https://buzzoid.com/wp-content/uploads/2015/12/buzzoid-logo.png","width":512,"height":512,"caption":"Buzzoid"},"image":{"@id":"https://buzzoid.com/#/schema/logo/image/"}}]}</script>
+
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='preload' href='https://buzzoid.com/wp-includes/css/classic-themes.min.css?ver=1' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='preload' href='https://buzzoid.com/wp-content/cache/min/1/wp-content/plugins/translatepress-multilingual/assets/css/trp-language-switcher.css?ver=1682121842' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" type='text/css' media='all' />
+<link rel='preload' href='https://buzzoid.com/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.42' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" type='text/css' media='all' />
+<style id='ez-toc-inline-css' type='text/css'>
+div#ez-toc-container p.ez-toc-title {font-size: 120%;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 95%;}div#ez-toc-container nav ul ul li ul li {font-size: 90%!important;}
+span.ez-toc-section{ scroll-margin-top: 30px;}
+.ez-toc-container-direction {direction: ltr;}.ez-toc-counter ul{counter-reset: item;}.ez-toc-counter nav ul li a::before {content: counters(item, ".", decimal) ". ";display: inline-block;counter-increment: item;flex-grow: 0;flex-shrink: 0;margin-right: .2em; float: left;}.ez-toc-widget-direction {direction: ltr;}.ez-toc-widget-container ul{counter-reset: item;}.ez-toc-widget-container nav ul li a::before {content: counters(item, ".", decimal) ". ";display: inline-block;counter-increment: item;flex-grow: 0;flex-shrink: 0;margin-right: .2em; float: left;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='ez-toc-scroll-scriptjs-js-after'>
+function ezTocScrollScriptJS() {
+    document.querySelectorAll('.ez-toc-section').forEach(span => {
+//        console.log(span.getAttribute('id'));
+        span.setAttribute('ez-toc-data-id', '#' + decodeURI(span.getAttribute('id')));
+	});
+    document.querySelectorAll('a.ez-toc-link').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+//            console.log('[id="' + this.getAttribute('href') + '"]');
+//            console.log(document.getElementById('[id="' + this.getAttribute('href') + '"]'));
+            
+            document.querySelector('[ez-toc-data-id="' + decodeURI(this.getAttribute('href')) + '"]').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+};           
+document.addEventListener('DOMContentLoaded', ezTocScrollScriptJS, false);
+</script>
+<link rel="https://api.w.org/" href="https://buzzoid.com/wp-json/" /><link rel="alternate" type="application/json" href="https://buzzoid.com/wp-json/wp/v2/pages/18" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://buzzoid.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://buzzoid.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.1" />
+<link rel='shortlink' href='https://buzzoid.com/?p=18' />
+<link rel="alternate" type="application/json+oembed" href="https://buzzoid.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbuzzoid.com%2Fbuy-instagram-followers%2F" />
+<link rel="alternate" hreflang="en-US" href="https://buzzoid.com/buy-instagram-followers/" />
+<link rel="alternate" hreflang="fr-FR" href="https://buzzoid.com/fr/acheter-instagram-followers/" />
+<link rel="alternate" hreflang="de-DE" href="https://buzzoid.com/de/instagram-followers-kaufen/" />
+<link rel="alternate" hreflang="pt-BR" href="https://buzzoid.com/pt/comprar-seguidores-instagram/" />
+<link rel="alternate" hreflang="nl-NL" href="https://buzzoid.com/nl/instagram-followers-kopen/" />
+<link rel="alternate" hreflang="en" href="https://buzzoid.com/buy-instagram-followers/" />
+<link rel="alternate" hreflang="fr" href="https://buzzoid.com/fr/acheter-instagram-followers/" />
+<link rel="alternate" hreflang="de" href="https://buzzoid.com/de/instagram-followers-kaufen/" />
+<link rel="alternate" hreflang="pt" href="https://buzzoid.com/pt/comprar-seguidores-instagram/" />
+<link rel="alternate" hreflang="nl" href="https://buzzoid.com/nl/instagram-followers-kopen/" />
+<link rel="alternate" hreflang="x-default" href="https://buzzoid.com/buy-instagram-followers/" />
+<link rel="icon" href="https://buzzoid.com/wp-content/uploads/2015/12/cropped-buzzoid-logo-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://buzzoid.com/wp-content/uploads/2015/12/cropped-buzzoid-logo-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://buzzoid.com/wp-content/uploads/2015/12/cropped-buzzoid-logo-180x180.png" />
+<meta name="msapplication-TileImage" content="https://buzzoid.com/wp-content/uploads/2015/12/cropped-buzzoid-logo-270x270.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script>
+
+<style>
+        /*
+        body {
+            padding-top: 136px;
+        }
+        @media (max-width: 767px) {
+            body {
+                padding-top: 120px;
+            }
+        }
+        .header .header__mobile {
+            padding-top: 88px;
+        }
+
+        */
+        .testimonial_group .testimonial {
+            width: 100%;
+            float: none;
+            display: block;
+            padding: 0;
+        }
+        .testimonial_group .testimonial .rr_title {
+            margin:0;
+        }
+        .testimonial_group .testimonial .rr_review_text .drop_cap {
+            line-height:10px;
+            font-size:70px;
+            position:relative;
+            top:auto;
+            left:auto;
+            zoom:inherit;
+            filter:none;
+            opacity:1;
+        }
+        .rr_review_name span {
+            padding:0;
+            font-size:13px;
+        }
+        .testimonial_group .testimonial .rr_review_name {
+            text-align:left;
+            padding:0;
+            font-size:13px;
+            font-style:normal;
+        }
+        .page_reviews p:first-child {
+            margin: 0;
+            line-height: 0;
+            height:0;
+            overflow:hidden;
+        }
+
+        .section__video {
+        max-width: 398px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-left: 50px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        }
+
+        @media (max-width: 768px) {
+        .section__video {
+            max-width: 450px;
+            margin: 32px auto;
+        }
+        }
+
+        .videod-player {
+        position: relative;
+        padding-top: 56.25%;
+        width:100%;
+        border-radius:20px;
+        overflow:hidden;
+        }
+
+        .videod-cover {
+        position:absolute;
+        top:0;
+        left:0;
+        height:100%;
+        width:100%;
+        cursor: pointer;
+        z-index: 10;
+        }
+
+        .videod-player.playing svg {
+        display:none;
+        }
+
+        .videod-player svg {
+        z-index: 10;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        cursor: pointer;
+        }
+    </style>
+</head>
+<body class="show-upsell-bar">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZMH4S8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="wrapper">
+
+<header class="header">
+<style>
+.mobileShow { display: none !important; }
+.desktopShow { display: block !important; }
+
+@media only screen and (max-width: 768px) {
+  .mobileShow { display: block !important; }
+  .desktopShow { display: none !important; }
+}
+</style>
+
+<div class="plug__bar">
+<div class="plug__mini">
+<div class="plug__left"></div>
+<div class="plug__inner">
+<p class="deskText">Try out our new <b>Automatic Instagram Likes</b>!</p>
+<p class="mobiText"><a href="https://buzzoid.com/automatic-instagram-likes" style="text-decoration: none"><b>New!</b> Automatic Instagram Likes. Click here.</a></p>
+<a href="https://buzzoid.com/automatic-instagram-likes" class="btn btn--plug btn--white">
+<span>Sign up</span>
+</a>
+</div>
+<div class="plug__right"></div>
+</div>
+</div>
+<div class="header__inner">
+<div class="shell--fluid">
+<a href="https://buzzoid.com" class="logo" title="Buzzoid">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Buzzoid" data-lazy-src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/logo.svg" /><noscript><img src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/logo.svg" alt="Buzzoid" /></noscript>
+</a>
+<div class="header_review">
+<a href="/reviews/" class="header_review_link" data-tracked="true">
+<span>5.0</span>
+<span class="stars">
+<span><i class="fas fa-star"></i></span>
+<span><i class="fas fa-star"></i></span>
+<span><i class="fas fa-star"></i></span>
+<span><i class="fas fa-star"></i></span>
+<span><i class="fas fa-star"></i></span>
+</span>
+</a>
+</div>
+<button type="button" class="btn-menu" onclick="document.body.classList.toggle('show-nav-main');">
+<i class="far fa-bars"></i>
+</button>
+<nav class="nav">
+<ul>
+<li>
+<a href="https://buzzoid.com/buy-instagram-likes/">Buy Instagram Likes</a
+                            >
+</li>
+<li>
+<a href="https://buzzoid.com/buy-instagram-followers/">Buy Instagram Followers</a
+                            >
+</li>
+<li>
+<a href="https://buzzoid.com/buy-instagram-views/">Buy Instagram Views</a
+                            >
+</li>
+<li>
+<a href="https://buzzoid.com/faq/">FAQ</a>
+</li>
+<li>
+<a href="https://buzzoid.com/contact-us/">Contact Us</a>
+</li>
+<li>
+<a href="https://buzzoid.com/login">Login</a>
+</li>
+<li class="highlight">
+<a href="https://buzzoid.com/signup">Sign up</a>
+</li>
+</ul>
+</nav>
+
+</div>
+
+</div>
+
+<div class="header__mobile">
+<nav class="nav-mobile-primary">
+<div class="nav-head">Buy packages</div>
+<ul>
+<li>
+<a href="https://buzzoid.com/buy-instagram-likes/">
+<i class="fas fa-heart"></i> Buy Instagram Likes
+</a>
+</li>
+<li>
+<a href="https://buzzoid.com/buy-instagram-followers/">
+<i class="fas fa-user"></i> Buy Instagram Followers
+</a>
+</li>
+<li>
+<a href="https://buzzoid.com/buy-instagram-views/">
+<i class="fas fa-eye"></i> Buy Instagram Views
+</a>
+</li>
+<li>
+<a href="https://buzzoid.com/automatic-instagram-likes/">
+<i class="fas fa-heart"></i> Buy Automatic Likes
+</a>
+</li>
+</ul>
+<div class="nav-head">Useful links</div>
+<ul>
+<li>
+<a href="https://buzzoid.com/faq/">
+<i class="fas fa-info-circle"></i> FAQ
+</a>
+</li>
+<li>
+<a href="https://buzzoid.com/contact-us/">
+<i class="fas fa-comment"></i> Contact
+</a>
+</li>
+<li>
+<a href="https://buzzoid.com/blog/">
+<i class="fas fa-question"></i> Blog
+</a>
+</li>
+</ul>
+<div class="nav-action">
+<a href="/signup" class="btn btn-lg btn--flex btn--modern">
+<span>Sign up</span>
+</a>
+<a href="/login" class="link">Log in</a>
+</div>
+</nav>
+
+</div>
+</header>
+<style type="text/css">
+    /*
+    .section--packages .section__head {
+        background:#f8f9fd;
+    }
+    .slider__off {
+        position: absolute;
+        z-index: 10;
+        background: rgba(255,255,255,0.925);
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    .slider__off p {
+        text-align:center;
+        margin:72px 12px 58px 12px;
+        font-size:18px;
+        font-weight:600;
+    }
+    .slider__off p a {
+        color:#333;
+    }
+    .slider__body {
+        filter: blur(2px);
+        pointer-events: none;
+    }
+    @media only screen and (max-width:600px) {
+        .slider__off p br {
+            display:none;
+        }
+    }
+    */
+
+
+    .slider-packages .slide {
+        text-align:center;
+    }
+
+    .fragment-package .fragment__list {
+        text-align:left;
+    }
+
+    .fragment__sale {
+        display: inline-block;
+        background: yellow;
+        color: #000;
+        padding: 2px 8px;
+        border: 1px solid #cdcdde;
+        border-bottom: 0 none;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        font-size: 17px;
+
+    }
+
+    .section.section--reviews .section__head p {
+      max-width:640px;
+    }
+
+</style>
+<style type="text/css">
+
+    .ftabs {
+        position:relative;
+        text-align:center;
+    }
+
+    .ftabs-row {
+        display:flex;
+        padding-top:20px;
+        justify-content: center;
+    }
+
+    .ftabs-row a {
+        position:relative;
+        display:inline-block;
+        border:1px solid #ff603c;
+        height:42px;
+        line-height:42px;
+        padding:0 36px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color:#ff603c;
+        border-radius:21px;
+        font-size:16px;
+        background-color:#fefeff;
+
+        transition: background-color 0.075s ease-out;
+    }
+
+    .ftabs-row a.mg {
+        color:#3ca753;
+        border-color:#3ca753;
+        margin-left:10px;
+    }
+	
+	.ftabs-row a.mg.sponsored {
+		height: 25px;
+		line-height: 25px;
+		opacity: 0.75;
+		/*border-color: #c3c3c3;
+		color: #7a7d86;*/
+	}
+
+    .ftabs-row a.l {
+        z-index:5;
+    }
+    .ftabs-row a.r {
+        z-index:4;
+        margin-left: -36px;
+        padding-left: 52px;
+    }
+    .ftabs-row a:hover {
+        background-color:#eee;
+    }
+
+    .ftabs-row a.active, .ftabs-row a.active:hover {
+        background-color:#ff603c;
+        color:#fff;
+    }
+
+    .price_table {
+        display:none;
+    }
+
+    .show_table {
+        display:block !important;
+    }
+
+    .fdiff {
+        display:inline-block;
+        margin-top:8px;
+        height:
+        text-align:center;
+        margin-bottom:16px;
+    }
+
+    @media (max-width: 800px) {
+        .ftabs-row {
+            display:block;
+        }
+        .ftabs-row a.mg {
+            margin-top:10px;
+            margin-left:0;
+        }
+		.ftabs-row a.mg.sponsored {
+			margin-top: 0px;
+		}
+
+    }
+
+    @media (max-width: 600px) {
+        .ftabs-wrap {
+            width:auto;
+            margin:0 -24px;
+        }
+        .ftabs {
+            display:flex;
+        }
+        .ftabs-row a {
+            width:auto;
+            flex: 1 1;
+            padding: 0;
+            font-size:14px;
+        }
+
+        .ftabs-row a.l {
+            flex-basis:60%;
+        }
+        .ftabs-row a.r {
+            flex-basis:60%;
+            padding-left:24px;
+        }
+        .ftabs-row a.mg {
+            display:inline-block;
+            padding:0 24px;
+        }
+
+    }
+    @media (max-width: 400px) {
+        .hidemb {
+            display:none;
+        }
+
+    }
+
+
+    .ftip {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 9000;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        padding:8px;
+    }
+    .ftip.shown {
+        display:flex;
+    }
+    .ftip-bg {
+        position:absolute;
+        background:rgba(0,0,0,0.2);
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        z-index:9002;
+    }
+    .ftip-inner {
+        position:relative;
+        z-index:9004;
+        max-width:400px;
+        background-color: #fff;
+        border: 1px solid #cdcdde;
+        border-radius: 7px;
+        padding: 24px 22px 28px;
+        height:auto;
+        width:100%;
+        flex: 0 1 auto;
+    }
+    .ftip-close {
+        position: absolute;
+        color: #aaa;
+        font-size: 28px;
+        top: -2px;
+        right: 8px;
+        cursor:pointer;
+    }
+    .ftip-close:hover {
+        color:#444;
+    }
+
+    .fragment__list i.fas {
+        left: 4px;
+    }
+    .fragment__list i.fas.fa-users {
+        left:2px;
+    }
+
+    /*
+    .dis-link {
+        opacity:0.2;
+        pointer-events: none;
+    }
+    */
+
+    .mg {
+        position:relative;
+    }
+    .mg-spon {
+        display:block;
+        text-align: center;
+        font-size: 13px;
+        letter-spacing: 0.25px;
+        opacity: 0.8;
+        font-style: italic;
+        color: #444;
+        text-transform: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -21px;
+        line-height: 18px;
+
+        
+    }
+
+    @media (max-width: 800px) {
+        .mg {
+            margin-bottom:21px;
+        }
+        .mg-spon {
+            font-size: 10px;
+            bottom: -17px;
+        }
+    }
+
+</style>
+<section class="section section--packages">
+<div class="section__head">
+<div class="shell">
+<h1 class="page_title">Buy Instagram Followers</h1>
+<h2>Buy Instagram Followers with <strong>Instant Delivery</strong> 🚀</h2>
+<p>At Buzzoid, you can buy Instagram followers quickly, safely, and easily with just a few clicks. See our deals below! Rated world's #1 IG service since 2012.</p>
+<div class="ftabs-wrap">
+<div class="ftabs-row">
+<div class="ftabs">
+<a href="#hq" class="l active" data-target="table1">High-quality<span class="hidemb"> followers</span></a><a href="#active" class="r dis-link" data-target="table2">Premium <span class="hidemb"> followers</span></a>
+</div>
+<a href="https://growthsilo.co/?utm_source=Buzzoid&utm_medium=Followers" class="mg sponsored" target="rpFrame" rel="nofollow">Managed growth<span class="mg-spon">Sponsored</span></a>
+</div>
+<a href="#" class="fdiff">What's the difference?</a>
+</div>
+</div>
+</div>
+<div id="table1" class="section__body price_table show_table">
+<div class="shell">
+<div class="slider-packages">
+<div class="slider__body">
+<div class="slider__body-group active">
+<div class="slides owl-carousel">
+<div class="slide">
+<div class="fragment__sale">
+<b>25% OFF NOW</b>
+</div>
+<div class="fragment-package">
+<div class="fragment__head">
+<p><strong>100</strong> Followers</p>
+</div>
+<div class="fragment__price">
+<p>
+<span>$</span>
+<strong>2</strong>
+<span>97</span>
+</p>
+</div>
+<div class="fragment__list">
+<ul>
+<li>
+<i class="ico-quality"></i>
+<span><strong>High quality</strong> followers</span>
+</li>
+<li>
+<i class="ico-passowrd"></i>
+<span><strong>No password</strong> required</span>
+</li>
+<li>
+<i class="ico-time"></i>
+<span><strong>Fast delivery</strong></span>
+</li>
+<li>
+<i class="ico-support"></i>
+<span><strong>24/7</strong> support</span>
+</li>
+</ul>
+</div>
+<div class="fragment__actions">
+<a href="/order/select/5?variant=a" class="btn btn--small">
+<span>Buy now</span>
+</a>
+</div>
+ </div>
+</div>
+<div class="slide">
+<div class="fragment__sale">
+<b>25% OFF NOW</b>
+</div>
+<div class="fragment-package">
+<div class="fragment__head">
+<p><strong>250</strong> Followers</p>
+</div>
+<div class="fragment__price">
+<p>
+<span>$</span>
+<strong>4</strong>
+<span>99</span>
+</p>
+</div>
+<div class="fragment__list">
+<ul>
+<li>
+<i class="ico-quality"></i>
+<span><strong>High quality</strong> followers</span>
+</li>
+<li>
+<i class="ico-passowrd"></i>
+<span><strong>No password</strong> required</span>
+</li>
+<li>
+<i class="ico-time"></i>
+<span><strong>Fast delivery</strong></span>
+</li>
+<li>
+<i class="ico-support"></i>
+<span><strong>24/7</strong> support</span>
+</li>
+</ul>
+</div>
+<div class="fragment__actions">
+<a href="/order/select/112?variant=a" class="btn btn--small">
+<span>Buy now</span>
+</a>
+</div>
+</div>
+</div>
+<div class="slide">
+<div class="fragment__sale">
+<b>25% OFF NOW</b>
+</div>
+<div class="fragment-package">
+<div class="fragment__head">
+<p><strong>500</strong> Followers</p>
+</div>
+<div class="fragment__price">
+<p>
+<span>$</span>
+<strong>6</strong>
+<span>99</span>
+</p>
+</div>
+<div class="fragment__list">
+<ul>
+<li>
+ <i class="ico-quality"></i>
+<span><strong>High quality</strong> followers</span>
+</li>
+<li>
+<i class="ico-passowrd"></i>
+<span><strong>No password</strong> required</span>
+</li>
+<li>
+<i class="ico-time"></i>
+<span><strong>Fast delivery</strong></span>
+</li>
+<li>
+<i class="ico-support"></i>
+<span><strong>24/7</strong> support</span>
+</li>
+</ul>
+</div>
+<div class="fragment__actions">
+<a href="/order/select/6?variant=a" class="btn btn--small">
+<span>Buy now</span>
+</a>
+</div>
+</div>
+</div>
+<div class="slide">
+<div class="fragment__sale">
+<b>25% OFF NOW</b>
+</div>
+<div class="fragment-package">
+<div class="fragment__head">
+<p><strong>1,000</strong> Followers</p>
+</div>
+<div class="fragment__price">
+<p>
+<span>$</span>
+<strong>12</strong>
+<span>99</span>
+</p>
+</div>
+<div class="fragment__list">
+<ul>
+<li>
+<i class="ico-quality"></i>
+<span><strong>High quality</strong> followers</span>
+</li>
+<li>
+<i class="ico-passowrd"></i>
+<span><strong>No password</strong> required</span>
+</li>
+<li>
+<i class="ico-time"></i>
+<span><strong>Fast delivery</strong></span>
+</li>
+<li>
+<i class="ico-support"></i>
+<span><strong>24/7</strong> support</span>
+</li>
+</ul>
+</div>
+<div class="fragment__actions">
+<a href="/order/select/61?variant=a" class="btn btn--small">
+<span>Buy now</span>
+</a>
+</div>
+</div>
+</div>
+<div class="slide">
+<div class="fragment__sale">
+<b>25% OFF NOW</b>
+</div>
+<div class="fragment-package">
+<div class="fragment__head">
+<p><strong>2,500</strong> Followers</p>
+</div>
+<div class="fragment__price">
+<p>
+<span>$</span>
+<strong>29</strong>
+<span>99</span>
+</p>
+</div>
+<div class="fragment__list">
+<ul>
+<li>
+<i class="ico-quality"></i>
+<span><strong>High quality</strong> followers</span>
+</li>
+<li>
+<i class="ico-passowrd"></i>
+<span><strong>No password</strong> required</span>
+</li>
+<li>
+<i class="ico-time"></i>
+<span><strong>Fast delivery</strong></span>
+</li>
+<li>
+<i class="ico-support"></i>
+<span><strong>24/7</strong> support</span>
+</li>
+</ul>
+</div>
+<div class="fragment__actions">
+<a href="/order/select/7?variant=a" class="btn btn--small">
+<span>Buy now</span>
+</a>
+</div>
+</div>
+</div>
+<div class="slide">
+<div class="fragment__sale">
+<b>25% OFF NOW</b>
+</div>
+<div class="fragment-package">
+<div class="fragment__head">
+<p><strong>5,000</strong> Followers</p>
+</div>
+<div class="fragment__price">
+<p>
+<span>$</span>
+<strong>39</strong>
+<span>99</span>
+</p>
+</div>
+<div class="fragment__list">
+<ul>
+<li>
+<i class="ico-quality"></i>
+<span><strong>High quality</strong> followers</span>
+</li>
+<li>
+<i class="ico-passowrd"></i>
+<span><strong>No password</strong> required</span>
+</li>
+<li>
+<i class="ico-time"></i>
+<span><strong>Fast delivery</strong></span>
+</li>
+<li>
+<i class="ico-support"></i>
+<span><strong>24/7</strong> support</span>
+</li>
+</ul>
+</div>
+<div class="fragment__actions">
+<a href="/order/select/8?variant=a" class="btn btn--small">
+<span>Buy now</span>
+</a>
+</div>
+</div>
+</div>
+<div class="slide">
+<div class="fragment__sale">
+<b>25% OFF NOW</b>
+</div>
+<div class="fragment-package">
+<div class="fragment__head">
+<p><strong>10,000</strong> Followers</p>
+</div>
+<div class="fragment__price">
+<p>
+<span>$</span>
+<strong>59</strong>
+<span>99</span>
+</p>
+</div>
+<div class="fragment__list">
+<ul>
+<li>
+<i class="ico-quality"></i>
+<span><strong>High quality</strong> followers</span>
+</li>
+<li>
+<i class="ico-passowrd"></i>
+<span><strong>No password</strong> required</span>
+</li>
+<li>
+<i class="ico-time"></i>
+<span><strong>Fast delivery</strong></span>
+</li>
+<li>
+<i class="ico-support"></i>
+ <span><strong>24/7</strong> support</span>
+</li>
+</ul>
+</div>
+<div class="fragment__actions">
+<a href="/order/select/177?variant=a" class="btn btn--small">
+<span>Buy now</span>
+</a>
+</div>
+</div>
+</div>
+<div class="slide">
+<div class="fragment__sale">
+<b>25% OFF NOW</b>
+</div>
+<div class="fragment-package">
+<div class="fragment__head">
+<p><strong>20,000</strong> Followers</p>
+</div>
+<div class="fragment__price">
+<p>
+<span>$</span>
+<strong>99</strong>
+<span>99</span>
+</p>
+</div>
+<div class="fragment__list">
+<ul>
+<li>
+<i class="ico-quality"></i>
+<span><strong>High quality</strong> followers</span>
+</li>
+<li>
+<i class="ico-passowrd"></i>
+<span><strong>No password</strong> required</span>
+</li>
+<li>
+<i class="ico-time"></i>
+<span><strong>Fast delivery</strong></span>
+</li>
+<li>
+<i class="ico-support"></i>
+<span><strong>24/7</strong> support</span>
+</li>
+</ul>
+</div>
+<div class="fragment__actions">
+<a href="/order/select/178?variant=a" class="btn btn--small">
+<span>Buy now</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="table2" class="section__body price_table">
+<div class="shell">
+<div class="slider-packages">
+<div class="slider__body">
+ <div class="slider__body-group active">
+<div class="slides owl-carousel">
+<div class="slide">
+<div class="fragment__sale">
+<b>25% OFF NOW</b>
+</div>
+<div class="fragment-package">
+<div class="fragment__head">
+<p><strong>500</strong> Followers</p>
+</div>
+<div class="fragment__price">
+<p>
+<span>$</span>
+<strong>11</strong>
+<span>99</span>
+</p>
+</div>
+<div class="fragment__list">
+<ul>
+<li>
+<i class="fas fa-stopwatch"></i>
+<span><strong>Guaranteed delivery</strong></span>
+</li>
+<li>
+<i class="fas fa-users"></i>
+<span><strong>Real active</strong> followers</span>
+</li>
+<li>
+<i class="fas fa-times-circle"></i>
+<span><strong>30 day</strong> refills</span>
+</li>
+<li>
+<i class="fas fa-unlock"></i>
+<span><strong>No password</strong> required</span>
+</li>
+<li>
+<i class="fas fa-life-ring"></i>
+<span><strong>24/7</strong> support</span>
+</li>
+</ul>
+</div>
+<div class="fragment__actions">
+<a href="/order/select/138?variant=a" class="btn btn--small">
+<span>Buy now</span>
+</a>
+</div>
+</div>
+</div>
+<div class="slide">
+<div class="fragment__sale">
+<b>25% OFF NOW</b>
+</div>
+<div class="fragment-package">
+<div class="fragment__head">
+<p><strong>1,000</strong> Followers</p>
+</div>
+<div class="fragment__price">
+<p>
+<span>$</span>
+<strong>19</strong>
+ <span>99</span>
+</p>
+</div>
+<div class="fragment__list">
+<ul>
+<li>
+<i class="fas fa-stopwatch"></i>
+<span><strong>Guaranteed delivery</strong></span>
+</li>
+<li>
+<i class="fas fa-users"></i>
+<span><strong>Real active</strong> followers</span>
+</li>
+<li>
+<i class="fas fa-times-circle"></i>
+<span><strong>30 day</strong> refills</span>
+</li>
+<li>
+<i class="fas fa-unlock"></i>
+<span><strong>No password</strong> required</span>
+</li>
+<li>
+<i class="fas fa-life-ring"></i>
+<span><strong>24/7</strong> support</span>
+</li>
+</ul>
+</div>
+<div class="fragment__actions">
+<a href="/order/select/139?variant=a" class="btn btn--small">
+<span>Buy now</span>
+</a>
+</div>
+</div>
+</div>
+<div class="slide">
+<div class="fragment__sale">
+<b>25% OFF NOW</b>
+</div>
+<div class="fragment-package">
+<div class="fragment__head">
+<p><strong>2,500</strong> Followers</p>
+</div>
+<div class="fragment__price">
+<p>
+<span>$</span>
+<strong>49</strong>
+<span>99</span>
+</p>
+</div>
+<div class="fragment__list">
+<ul>
+<li>
+<i class="fas fa-stopwatch"></i>
+<span><strong>Guaranteed delivery</strong></span>
+</li>
+<li>
+<i class="fas fa-users"></i>
+<span><strong>Real active</strong> followers</span>
+</li>
+<li>
+ <i class="fas fa-times-circle"></i>
+<span><strong>30 day</strong> refills</span>
+</li>
+<li>
+<i class="fas fa-unlock"></i>
+<span><strong>No password</strong> required</span>
+</li>
+<li>
+<i class="fas fa-life-ring"></i>
+<span><strong>24/7</strong> support</span>
+</li>
+</ul>
+</div>
+<div class="fragment__actions">
+<a href="/order/select/140?variant=a" class="btn btn--small">
+<span>Buy now</span>
+</a>
+</div>
+</div>
+</div>
+<div class="slide">
+<div class="fragment__sale">
+<b>25% OFF NOW</b>
+</div>
+<div class="fragment-package">
+<div class="fragment__head">
+<p><strong>5,000</strong> Followers</p>
+</div>
+<div class="fragment__price">
+<p>
+<span>$</span>
+<strong>84</strong>
+<span>99</span>
+</p>
+</div>
+<div class="fragment__list">
+<ul>
+<li>
+<i class="fas fa-stopwatch"></i>
+<span><strong>Guaranteed delivery</strong></span>
+</li>
+<li>
+<i class="fas fa-users"></i>
+<span><strong>Real active</strong> followers</span>
+</li>
+<li>
+<i class="fas fa-times-circle"></i>
+<span><strong>30 day</strong> refills</span>
+</li>
+<li>
+<i class="fas fa-unlock"></i>
+<span><strong>No password</strong> required</span>
+</li>
+<li>
+<i class="fas fa-life-ring"></i>
+<span><strong>24/7</strong> support</span>
+</li>
+</ul>
+</div>
+ <div class="fragment__actions">
+<a href="/order/select/141?variant=a" class="btn btn--small">
+<span>Buy now</span>
+</a>
+</div>
+</div>
+</div>
+<div class="slide">
+<div class="fragment__sale">
+<b>25% OFF NOW</b>
+</div>
+<div class="fragment-package">
+<div class="fragment__head">
+<p><strong>7,500</strong> Followers</p>
+</div>
+<div class="fragment__price">
+<p>
+<span>$</span>
+<strong>109</strong>
+<span>99</span>
+</p>
+</div>
+<div class="fragment__list">
+<ul>
+<li>
+<i class="fas fa-stopwatch"></i>
+<span><strong>Guaranteed delivery</strong></span>
+</li>
+<li>
+<i class="fas fa-users"></i>
+<span><strong>Real active</strong> followers</span>
+</li>
+<li>
+<i class="fas fa-times-circle"></i>
+<span><strong>30 day</strong> refills</span>
+</li>
+<li>
+<i class="fas fa-unlock"></i>
+<span><strong>No password</strong> required</span>
+</li>
+<li>
+<i class="fas fa-life-ring"></i>
+<span><strong>24/7</strong> support</span>
+</li>
+</ul>
+</div>
+<div class="fragment__actions">
+<a href="/order/select/179?variant=a" class="btn btn--small">
+<span>Buy now</span>
+</a>
+</div>
+</div>
+</div>
+<div class="slide">
+<div class="fragment__sale">
+<b>25% OFF NOW</b>
+</div>
+<div class="fragment-package">
+<div class="fragment__head">
+<p><strong>10,000</strong> Followers</p>
+ </div>
+<div class="fragment__price">
+<p>
+<span>$</span>
+<strong>129</strong>
+<span>99</span>
+</p>
+</div>
+<div class="fragment__list">
+<ul>
+<li>
+<i class="fas fa-stopwatch"></i>
+<span><strong>Guaranteed delivery</strong></span>
+</li>
+<li>
+<i class="fas fa-users"></i>
+<span><strong>Real active</strong> followers</span>
+</li>
+<li>
+<i class="fas fa-times-circle"></i>
+<span><strong>30 day</strong> refills</span>
+</li>
+<li>
+<i class="fas fa-unlock"></i>
+<span><strong>No password</strong> required</span>
+</li>
+<li>
+<i class="fas fa-life-ring"></i>
+<span><strong>24/7</strong> support</span>
+</li>
+</ul>
+</div>
+<div class="fragment__actions">
+<a href="/order/select/180?variant=a" class="btn btn--small">
+<span>Buy now</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section section--gray section--results">
+<div class="section__head">
+<div class="shell">
+<div style="max-width: 580px; margin: 0 auto 20px auto">
+<div class="videoc">
+<div class="videoc-inner">
+<img class="videoc-thumb" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://buzzoid.com/wp-content/themes/buzz/assets/video/follow2.jpg" /><noscript><img class="videoc-thumb" src="https://buzzoid.com/wp-content/themes/buzz/assets/video/follow2.jpg" /></noscript>
+<svg class="videoc-play" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 27.5C0 12.3122 12.3122 0 27.5 0C42.6878 0 55 12.3122 55 27.5C55 42.6878 42.6878 55 27.5 55C12.3122 55 0 42.6878 0 27.5Z" fill="#EC6148"></path>
+<path d="M23.7111 37.6937C23.1185 38.0782 22.5188 38.1007 21.912 37.7611C21.3052 37.4215 21.0012 36.8962 21 36.1851V17.8158C21 17.1059 21.304 16.5805 21.912 16.2398C22.52 15.899 23.1197 15.9215 23.7111 16.3072L38.2 25.4919C38.7333 25.8468 39 26.3497 39 27.0004C39 27.6512 38.7333 28.1541 38.2 28.509L23.7111 37.6937Z" fill="white"></path>
+</svg>
+<video src="https://bzs.us-east-1.linodeobjects.com/vfollow.mp4" preload="none" type="video/mp4" playsinline="" poster="https://buzzoid.com/wp-content/themes/buzz/assets/video/follow2.jpg"></video>
+</div>
+</div>
+</div>
+<h2>We have proudly delivered over <span id="animated-number" data-from="3581149772" data-to="4803483216" style="color:#ff603c;">3,581,149,772</span> followers</h2>
+</div>
+</div>
+</section>
+<section class="section section--testimonials-secondary">
+<div class="section__body">
+<div class="shell shell--medium">
+<div class="slider-testimonials-secondary">
+<div class="slider__body">
+<div class="slides owl-carousel">
+<div class="slide" data-slide="0">
+<div class="slide__body">
+<p class="quote">" If you are in search of high quality Instagram services then Buzzoid is the place
+to go for. Service they deliver attract further growth. "</p>
+<p class="author">Cassandra T.</p>
+</div>
+</div>
+<div class="slide" data-slide="1">
+<div class="slide__body">
+<p class="quote">" It's great! I have been using the service for the last few months and I am loving
+the results. My followers have increased and I have been noticing organic growth on my profiles as
+well. Amazing!!! "</p>
+<p class="author">Mona N.</p>
+</div>
+</div>
+<div class="slide" data-slide="2">
+<div class="slide__body">
+<p class="quote">" Buzzoid has fast turnaround and excellent customer service. Never seen such a
+great experience. "</p>
+<p class="author">Craig P.</p>
+</div>
+</div>
+<div class="slide" data-slide="3">
+<div class="slide__body">
+<p class="quote">" Instagram really helps to build our presence in social media. We were blown away
+by Buzzoid's speed and quality for likes and followers! "</p>
+<p class="author">Chris Johnson</p>
+</div>
+</div>
+<div class="slide" data-slide="4">
+<div class="slide__body">
+<p class="quote">" I purchased Buzzoid today, and my instagram audience has grown tremendously I
+highly recommend Buzzoid! "</p>
+<p class="author">Dexter H.</p>
+</div>
+</div>
+<div class="slide" data-slide="5">
+<div class="slide__body">
+<p class="quote">" Great service, very nice. Respond on time and also the delivery was very fast.
+Thanks and will order again. "</p>
+<p class="author">Evelyn R.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="slider__foot" style="display:none">
+<div class="slides-thumbs owl-carousel">
+<div class="slide-thumb" data-slide="0">
+<a href="#">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/avatar--img-2.jpg"><noscript><img src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/avatar--img-2.jpg"
+                alt=""></noscript>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="new_hiw">
+<div id="new_hiw_inner">
+<h2 style="padding-bottom: 2.5rem;">How It Works</h2>
+<div id="new_hiw_columns">
+<div>
+<p>
+<strong>Instant delivery guaranteed</strong>You will typically start seeing Likes, Followers, and Views
+within minutes of purchasing.
+</p>
+</div>
+<div>
+<p>
+<strong>Our guarantee</strong>We want to leave a lasting impression on our clients. If you aren't
+satisfied with the quality or delivery of your order, tell us. We'll refund any order that isn't
+fulfilled.
+</p>
+</div>
+<div>
+<p>
+<strong>24/7 customer support</strong>Our dedicated support staff is always available. If you have any
+questions about our services or experience any problems with your order, please don't hesitate to contact
+us.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section section--gray section--services">
+<div class="section__head">
+<div class="shell">
+<h2>Ready to buy Instagram followers?</h2>
+<p>Followers are a fundamental part of your Instagram success. Buy Instagram followers from Buzzoid, and watch your Instagram profile gain more recognition, visibility, and exposure.</p>
+</div>
+</div>
+<div class="section__body">
+<div class="shell">
+<div class="list-services">
+<ul>
+<li>
+<article class="article-service">
+<div class="article__image">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/list-services--img-1.svg" /><noscript><img src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/list-services--img-1.svg" alt="" /></noscript>
+</div>
+<div class="article__body">
+<h4>1. Instant Delivery Guaranteed</h4>
+<p>Don't wait to get your followers. Orders typically process within minutes of purchase.</p>
+</div>
+</article>
+</li>
+<li>
+<article class="article-service">
+<div class="article__image">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/list-services--img-2.svg" /><noscript><img src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/list-services--img-2.svg" alt="" /></noscript>
+</div>
+<div class="article__body">
+<h4>2. High Quality Followers</h4>
+<p>We offer the best quality followers the market has to offer. No fake Instagram followers!</p>
+</div>
+</article>
+</li>
+<li>
+<article class="article-service">
+<div class="article__image">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/list-services--img-3.svg" /><noscript><img src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/list-services--img-3.svg" alt="" /></noscript>
+</div>
+<div class="article__body">
+<h4>3. 24/7 Customer Support</h4>
+<p>Nothing worse than dealing with bad customer support. We got your back. Dedicated support team.</p>
+</div>
+ </article>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="section section--faq">
+<div class="section__head">
+<div class="shell">
+<h2>Buy Instagram Followers Easily With Buzzoid</h2>
+<p>Over 10,000 daily customers trust us as the best site to deliver real Instagram followers</p>
+</div>
+</div>
+<div class="section__body">
+<div class="shell shell--normal">
+<div class="section__body-col">
+<div class="accordion-main">
+<div class="accordion__group active">
+<div class="accordion__head">
+<h4>Why Should I Buy Instagram Followers?</h4>
+</div>
+<div class="accordion__body">
+<p>The number of followers you have means a lot more than you might expect. Most viewers take the number of followers on an account into consideration before they decide to click the follow button — or not. This is what is called “social proof” and is what gives your brand awareness.</p>
+<p>The <i>perception</i> of popularity is often enough to manifest this quality in real life. You could be an expert in your field, but without enough followers to "prove" it, nobody is going to pay any attention to you. Instagram is all about numbers, and your follower count is a big part of your presence on the platform.</p>
+<p>Whether you’re a new account trying to get off the ground faster, or a mature account in need of a boost, there are plenty of reasons why it makes sense to buy new followers from Buzzoid for your Instagram account. We will send organic followers to your account within minutes of your order.</p>
+<p>You can also <a href="/buy-instagram-likes">buy Instagram likes</a> from Buzzoid.</p>
+</div>
+</div>
+<div class="accordion__group active">
+<div class="accordion__head">
+<h4>What’s the Quality of Buzzoid Followers?</h4>
+</div>
+<div class="accordion__body">
+<p>It's one thing to get thousands of new followers, but if they're entirely fake, you could be flagged for breaking Instagram's terms.</p>
+<p>This is the primary difference between high-quality Instagram followers and cheap or low-quality followers.</p>
+<p>Here at Buzzoid, we don’t even bother with low-quality followers. These followers have very low engagement with the platform and are often booted off Instagram after a couple of weeks.</p>
+<p>This is referred to as "drop-off." You may get a boost of followers in the short term, but they quickly fall off as the accounts are deleted. We believe in providing you quality services where you don’t lose your purchased followers.</p>
+<p><b>We have two tiers to choose from:</b></p>
+<ul>
+<li><b>High-Quality Followers</b> — Followers with profile pictures, but no further uploads.</li>
+<li><b>Premium Followers</b> — Followers with profile pictures and regularly posted quality content. Also referred to as “active Instagram followers” previously.</li>
+</ul>
+<p>We’ve developed a system of generating <a href="https://twicsy.com/buy-instagram-followers">authentic followers</a> that work to boost your following without leading to a drop-off a few weeks later. Unlike other social media marketing sites that use fake accounts, we only work with real accounts from real people — no exceptions. This is a common experience Instagram users report after buying cheap Instagram followers. Drop-off is still a (rare) possibility in our ecosystem. We’ll replace any drop-off followers within 30 days of your order. This is the main reason we’ve been the top provider out of all Instagram services since 2012.</p>
+</div>
+</div>
+<div class="accordion__group active">
+<div class="accordion__head">
+<h4>What’s The Turnaround Time After I Place My Order?</h4>
+</div>
+<div class="accordion__body">
+<p>When you place an order, our system automatically begins assigning you followers. In order to prevent a dramatic influx of followers that could trigger Instagram's spam detection, we roll out your new followers over a couple of days using the specialized algorithm that we’ve developed over the past 10 years. This is so your account never gets flagged by the Instagram algorithm. The rate of dishing out new followers depends on the size of your current audience and the size of your expected target audience.</p>
+<p>The more followers you have, the faster we can roll out your order. Most rollouts are complete within 48 hours after your checkout. We have the fastest delivery time out of all the providers.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section__body-col">
+<div class="accordion-main">
+<div class="accordion__group active">
+<div class="accordion__head">
+<h4>Could My Account Be Banned For Buying Followers?</h4>
+</div>
+<div class="accordion__body">
+<p>Buying cheap, low-quality followers comes with a high chance of getting your account flagged or banned for good. This is the sole reason we don’t even dabble in low-quality, spammy insta followers.</p>
+<p>All our followers are authentic users, so you’re not going to be banned for using our service.</p>
+<p>We’ve been doing this for years and have grown thousands of accounts with this method. Throughout all of these projects, we have yet to discover a single case of an account that was banned as a result of buying followers from Buzzoid. </p>
+</div>
+</div>
+<div class="accordion__group active">
+<div class="accordion__head">
+<h4>Which Package Should I Choose?</h4>
+</div>
+<div class="accordion__body">
+<p>We offer several different packages to fit your brand’s unique requirements. </p>
+<p>First, you should decide whether you want high-quality followers or premium followers. </p>
+<p>The high-quality package is best for accounts that already have a decent following and want a little boost. The premium package is for those serious about growing their accounts to scale or brand new accounts with less than 5000 followers. The premium package has an exceptionally low drop-off lasting several years after your purchase. </p>
+<p>Both packages come in quantities of 500, 1000, 2500, or 5000 new followers per purchase. </p>
+</div>
+</div>
+<div class="accordion__group active">
+<div class="accordion__head">
+<h4>What Information Do I Need to Provide?</h4>
+</div>
+<div class="accordion__body">
+<p>We don’t need much — just your Instagram username. </p>
+<p>We will never ask for your password or any personal or private information about your account. </p>
+<p>We accept the usual forms of payment methods, including all major credit cards and PayPal (coming soon). </p>
+</div>
+</div>
+<div class="accordion__group active">
+<div class="accordion__head">
+<h4>Why Choose Buzzoid?</h4>
+</div>
+<div class="accordion__body">
+<p>Buzzoid was created by a team of social media experts with over 12 years of experience on social media platforms. We’re constantly testing and improving our process to stay one step ahead of the competition.</p>
+<p>Instagram influencers always incorporate us in their marketing strategy to boost their engagement rate. We’ve spent a lot of time perfecting our craft over the past decade.</p>
+<p>We're constantly running tests within the Instagram ecosystem. This allows us to find the optimal follower velocity when rolling out new orders. Our system leverages real users — so you're not going to run into problems with Instagram over their terms and conditions.</p>
+<p>The overall impact of your new followers is going to have substantially greater results than bot-driven services, or methods such as using a ton of hashtags in hopes of getting one trending and viral upload on the explore page.</p>
+<p>If that’s not enough, our 100,000 satisfied monthly recurring customers trusting us to be their preferred Instagram growth service say it all.</p>
+<p>Still on the fence? Buzzoid has been voted the <b>best site to buy Instagram followers</b> by <a href="https://www.usmagazine.com/entertainment/news/buy-instagram-followers/">Us Weekly</a>, <a href="https://www.amny.com/sponsored/buy-instagram-followers/">AMNY</a>, <a href="https://www.mensjournal.com/style/buy-instagram-followers/">Men's Journal</a>, <a href="https://www.abcactionnews.com/sponsor-generated-content/buy-instagram-followers">ABC Action News</a> and <a href="https://www.denver7.com/brand-spotlight/buy-instagram-followers">Denver7</a> just to mention a few. Make the right choice and choose Buzzoid.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "FAQ",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why Should I Buy Instagram Followers?",
+      "answerCount": 1,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The number of followers you have means a lot more than you might expect. Most viewers take the number of followers on an account into consideration before they decide to click the follow button — or not.\nThe perception of popularity is often enough to manifest this quality in real life. You could be an expert in your field, but without enough followers to \"prove\" it, nobody is going to pay any attention to you. Instagram is all about numbers, and your follower count is a big part of your presence on the platform.\nWhether you’re a new account trying to get off the ground faster, or a mature account in need of a boost, there are plenty of reasons why it makes sense to buy new followers from Buzzoid for your Instagram account. We will send organic followers to your account within minutes of your order.\nYou can also buy Instagram likes from Buzzoid."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What’s the Quality of Buzzoid Followers?",
+      "answerCount": 1,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's one thing to get thousands of new followers, but if they're entirely fake, you could be flagged for breaking Instagram's terms.\nThis is the primary difference between high-quality Instagram followers and cheap or low-quality followers.\nHere at Buzzoid, we don’t even bother with low-quality followers. These followers have very low engagement with the platform and are often booted off Instagram after a couple of weeks.\nThis is referred to as \"drop-off.\" You may get a boost of followers in the short term, but they quickly fall off as the accounts are deleted.\n\nWe have two tiers to choose from:\nHigh-Quality Followers — Followers with profile pictures, but no further uploads.\nPremium Followers — Followers with profile pictures and regularly posted content.\n\nWe’ve developed a system of generating authentic followers that work to boost your following without leading to a drop-off a few weeks later. This is a common experience users report after buying cheap Instagram followers. Drop-off is still a (rare) possibility in our ecosystem. We’ll replace any drop-off followers within 30 days of your order. "
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What’s The Turnaround Time After I Place My Order?",
+      "answerCount": 1,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When you place an order, our system automatically begins assigning you followers. In order to prevent a dramatic influx of followers that could trigger Instagram's spam detection, we roll out your new followers over a couple of days. The rate of dishing out new followers depends on the size of your current audience.\nThe more followers you have, the faster we can roll out your order. Most rollouts are complete within 48 hours after your purchase. "
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why Choose Buzzoid? ",
+      "answerCount": 1,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Buzzoid was created by a team of social media experts with over 12 years of experience on social media platforms. We’re constantly testing and improving our process to stay one step ahead of the competition.\nWe're constantly running tests within the Instagram ecosystem. This allows us to find the optimal follower velocity when rolling out new orders. Our system leverages real users — so you're not going to run into problems with Instagram over their terms and conditions.\nThe overall impact of your new followers is going to have substantially greater results than bot-driven services.\nIf that’s not enough, our 1000 satisfied monthly recurring customers says it all. "
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Could My Account Be Banned For Buying Followers?",
+      "answerCount": 1,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Buying cheap, low-quality followers comes with a high chance of getting your account flagged or banned for good. This is the sole reason we don’t even dabble in low-quality, spammy followers.\nAll our followers are authentic users, so you’re not going to be banned for using our service.\nWe’ve been doing this for years and have grown thousands of accounts with this method. Throughout all of these projects, we have yet to discover a single case of an account that was banned as a result of buying followers from Buzzoid. "
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Package Should I Choose?",
+      "answerCount": 1,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer several different packages to fit your brand’s unique requirements.\nFirst, you should decide whether you want high-quality followers or premium followers.\nThe high-quality package is best for accounts that already have a decent following and want a little boost. The premium package is for those serious about growing their accounts to scale or brand new accounts with less than 5000 followers. The premium package has an exceptionally low drop-off lasting several years after your purchase.\nBoth packages come in quantities of 500, 1000, 2500, or 5000 new followers per purchase."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Information Do I Need to Provide?",
+      "answerCount": 1,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We don’t need much — just your username.\nWe will never ask for your password or any personal or private information about your account.\nWe accept the usual forms of payment, including all major credit cards and PayPal (coming soon). "
+      }
+    }
+  ]
+}</script>
+<section class="section section--gray section--reviews">
+<div class="section__head">
+<div class="shell">
+<h2>Customer Reviews &amp; Feedback 😄</h2>
+<p>Here at Buzzoid, we pride ourselves on exceptional service and affordable prices. Don’t just take our word for it – check out what customers say about our Instagram followers below</p>
+</div>
+</div>
+<div class="section__body">
+<div class="shell shell--medium">
+<div class="section__body-form">
+<div class="form-review">
+<form action="/reviewForm.php" method="POST">
+<input type="hidden" name="action" value="review">
+<input type="hidden" name="page_id" value="18">
+<div class="form__head">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/form-review-new.svg" /><noscript><img src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/form-review-new.svg" alt="" /></noscript>
+<h4>Submit Your Review</h4>
+</div>
+<div class="form__body">
+<ul>
+<li>
+<div class="form__field">
+<label>Name</label>
+<input name="name" type="text" placeholder="Your name" maxlength="32" />
+</div>
+</li>
+<li>
+<div class="form__field">
+<label>Email</label>
+<input name="email" type="email" placeholder="your@email.com" maxlength="100" />
+</div>
+</li>
+<li>
+<div class="form__field form__field--rating">
+<label>Rating</label>
+<input class="rating-input" type="hidden" name="rating" value="0" />
+<ul>
+<li>
+<input type="checkbox" name="" value="1" id="form-review-checkbox-1" />
+<label for="form-review-checkbox-1"><i class="far fa-star"></i></label>
+</li>
+<li>
+<input type="checkbox" name="" value="2" id="form-review-checkbox-2" />
+<label for="form-review-checkbox-2"><i class="far fa-star"></i></label>
+</li>
+<li>
+<input type="checkbox" name="" value="3" id="form-review-checkbox-3" />
+<label for="form-review-checkbox-3"><i class="far fa-star"></i></label>
+</li>
+<li>
+<input type="checkbox" name="" value="4" id="form-review-checkbox-4" />
+<label for="form-review-checkbox-4"><i class="far fa-star"></i></label>
+</li>
+<li>
+<input type="checkbox" name="" value="5" id="form-review-checkbox-5" />
+<label for="form-review-checkbox-5"><i class="far fa-star"></i></label>
+</li>
+</ul>
+<strong><span>0</span>/5</strong>
+</div>
+</li>
+<li>
+<div class="form__field form__field--textarea">
+<label>Review</label>
+<textarea name="comment" cols="" rows="" placeholder="Your Review" maxlength="500"></textarea>
+</div>
+</li>
+</ul>
+</div>
+<div class="form__actions">
+<input type="submit" value="Submit review" class="form__btn" />
+</div>
+</form>
+</div>
+</div>
+<div class="section__body-review">
+<div class="list-reviews" data-post="18">
+<div class="page_reviews">
+<script type="application/ld+json">{"@context":"http://schema.org/","@type":"Product","name":"Buzzoid Followers","image":"https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/buy-instagram-followers.png","description":"A slight follow boost to help your Instagram account skyrocket.","url":"https://buzzoid.com/buy-instagram-followers/","sku":"18","mpn":"18","brand":{"@type":"Brand","name":"Buzzoid"},"offers":{"@type":"AggregateOffer","availability":"http://schema.org/InStock","lowPrice":"2.97","offerCount":"6","priceCurrency":"USD","url":"https://buzzoid.com/buy-instagram-followers/","priceValidUntil":"2023-11-29"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","bestRating":"5","worstRating":"1","reviewCount":"133"},"review":[{"@type":"Review","author":{"@type":"Person","name":"Ellie"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Love this app!"},{"@type":"Review","author":{"@type":"Person","name":"andre"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"better than all other websites and this one actually works!"},{"@type":"Review","author":{"@type":"Person","name":"Kay"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Great service and like that you\u2019re given a trial before paying!"},{"@type":"Review","author":{"@type":"Person","name":"Jason"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"It actually works and all of them were legit !!"},{"@type":"Review","author":{"@type":"Person","name":"Bailey"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Really quick and easy"},{"@type":"Review","author":{"@type":"Person","name":"Matt Cromer"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Amazing, so helpful and has helped me improve my page and earn more followers with the positive engagement increase."},{"@type":"Review","author":{"@type":"Person","name":"Kamerin carter"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Great way to get followers"},{"@type":"Review","author":{"@type":"Person","name":"Ricky"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Amazing service and I love how it increases your attention"},{"@type":"Review","author":{"@type":"Person","name":"Marco Menjivar"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I like the way the followers come in just 30 minutes"},{"@type":"Review","author":{"@type":"Person","name":"Naila"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"It worked thanks a lot"},{"@type":"Review","author":{"@type":"Person","name":"Nthabi"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I won\u2019t lie, I was really skeptical at first but my heart got filled with excitement as soon as my real followers starting filling up my notifications. I am extremely satisfied!"},{"@type":"Review","author":{"@type":"Person","name":"Doggblitz4"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Respecto"},{"@type":"Review","author":{"@type":"Person","name":"Nathan Rice"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I was a bit skeptical at first, but the followers started coming INSTANTLY after i bought them. I suggest you all use this if you want some followers."},{"@type":"Review","author":{"@type":"Person","name":"Kalah"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I will give them 5 Stars. It started to go up really fast and then went down a bit and then started going up again! Thank you so much\u2019 I\u2019m Really considering the 40 dollars now!"},{"@type":"Review","author":{"@type":"Person","name":"Rip Stan Lee"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"It works great fam, I bought 200 followers and 100 likes and they were delivered within I don\u2019t know about 3-5 minutes . You guys can dm me on Instagram @fbn5k to see proof . I\u2019ll send you the screenshots of the emails I got that confirmed my purchases. Also follow me on Snapchat @hooper.saun. Thanks that\u2019s all."},{"@type":"Review","author":{"@type":"Person","name":"Besnik"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Thank you so much Buzzoid. I sugget to buy followers on Buzzoid very fast real followers. Thanks again"},{"@type":"Review","author":{"@type":"Person","name":"Badol"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Great tool to effectively grow your following in a compliant way."},{"@type":"Review","author":{"@type":"Person","name":"Bernabedelvillar"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Super fast service, simply the best quality followers!"},{"@type":"Review","author":{"@type":"Person","name":"Frank Anderson"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Great service, great support. 5 Stars from me."},{"@type":"Review","author":{"@type":"Person","name":"Heather Bond"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Really helpful!"},{"@type":"Review","author":{"@type":"Person","name":"Lara"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I would like to thank Buzzoid for their professional follow up about their services."},{"@type":"Review","author":{"@type":"Person","name":"Kiara"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I love this sote. 100% REAL FOLLOWERS!"},{"@type":"Review","author":{"@type":"Person","name":"Franky Martin"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"This website worked! Apart from the fact that that I started with 50 followers, bought the 500 followers package and ended up with 498 followers. Maybe make sure that people don\u2019t unfollow. Thanks - Franky."},{"@type":"Review","author":{"@type":"Person","name":"Victor M Mares"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Works in a couple hours"},{"@type":"Review","author":{"@type":"Person","name":"Brittney"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I am amazed at how fast and easy this was. This is definitely going to help my business and I am so grateful!"},{"@type":"Review","author":{"@type":"Person","name":"John Davis"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Wow what a service! Talk about delivering...over the top service!!! Would I recommend...a 1,000 times YES!"},{"@type":"Review","author":{"@type":"Person","name":"igacartier"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"five star"},{"@type":"Review","author":{"@type":"Person","name":"Tahir Salih"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"good"},{"@type":"Review","author":{"@type":"Person","name":"Steven Wood"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"in less than an hour i had my 750 followers. rapid delivery as promised! i will definitively will continue working with Buzzoid. I recommend their services! they are professionals in this matter."},{"@type":"Review","author":{"@type":"Person","name":"DJ"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Worth it! I was nervous at first because the idea seemed sketchy to me but I made the purchase and not even a minute later my phone was lighting up with so many notifications. I had my followers instantly! And they don\u2019t look like fake followers either! Great great service, good company! 10/10 would recommend."},{"@type":"Review","author":{"@type":"Person","name":"Eayd Fairaq"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Dear, I have used your service 4 or 5 times so far. I am a loyal customer! would you please do a huge favor and give me 50.000 Followers for $150 ? I will pay today! and continue using your service forever, and refer you to my friends! Please let me know, as I am looking to buy 50k followers asap!"},{"@type":"Review","author":{"@type":"Person","name":"John Rumberger"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Best service for instant IG followers! Will keep using!"},{"@type":"Review","author":{"@type":"Person","name":"John Rumberger"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Awesome service! Followers keep refilling! Gonna keep using Buzzoid!"},{"@type":"Review","author":{"@type":"Person","name":"Billy James"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Worked. Had money left over on Visa card and needed a boost so just spent the rest on this."},{"@type":"Review","author":{"@type":"Person","name":"@ultimate_human_freedom"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Amazing works perfect and on time"},{"@type":"Review","author":{"@type":"Person","name":"Jack Gaisford"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Really efficient service, they've really helped me improve my company V21's public reach!"},{"@type":"Review","author":{"@type":"Person","name":"Matt"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Great customer service. Fast response time. On the weekend it was around 6-8 hours but during the week 10-15 min response time. Incredible! I bought the 500 followers and was sadly unsatisfied and received a full refund!!! Fast and great customer service and would highly recommend to someone who just wants their numbers to look higher without actually having real followers. All in all a good company even tho I was very skeptical of all the negative reviews from other websites. But who really leaves reviews besides people who had a bad experience anyway. I\u2019m leaving this one to hopefully show this is in fact a great company. Just didn\u2019t work out for me."},{"@type":"Review","author":{"@type":"Person","name":"Karen Tatum"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Instant delivery! Got 100 followers within 3 or less minutes."},{"@type":"Review","author":{"@type":"Person","name":"sam"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"good"},{"@type":"Review","author":{"@type":"Person","name":"Savannah"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I\u2019ve tried another service and my followers never came through. Can I get a response to ensure this site is real and will work?"},{"@type":"Review","author":{"@type":"Person","name":"Adrbm"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I don't usually write reviews. I was skeptical at first too thought it was a scam, but it worked! Will definitely use this from now on :) Paying for a min of 100 likes was worth it!"},{"@type":"Review","author":{"@type":"Person","name":"James"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Didn\u2019t get the followers instantly but The customer support is so fast! Totally worth!"},{"@type":"Review","author":{"@type":"Person","name":"Kat"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I purchased 500 likes as Instagram kept flagging my new picture as 'too many hashtags' even though i was yet to tag. Knowing I'd be losing engagement I purchase the likes to keep my post relevant. The likes came within 3minutes! I was very impressed as it was my first time. Will use again x"},{"@type":"Review","author":{"@type":"Person","name":"caro"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I had all of my followers within an hour. They came in chunks, which worried me at first, but this service works and it's super fast!"},{"@type":"Review","author":{"@type":"Person","name":"Freddy Smith"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Quick, Efficient, Worth-the-money and Guaranteed Results! Will I be back for more? I think this review answers that question"},{"@type":"Review","author":{"@type":"Person","name":"Jack"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Made payment at night, woke up with three times the followers! Is it a dream? No, just Buzzoid! Hahaha, thanks again gentlemen. Top service you guys have here."},{"@type":"Review","author":{"@type":"Person","name":"Ajay"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Finally, a site that serves its clients heartily. So happy with results, will be back for more soon."},{"@type":"Review","author":{"@type":"Person","name":"Paul"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Never did I think it possible to boost follower numbers so quickly. Buzzoid is a magician!"},{"@type":"Review","author":{"@type":"Person","name":"Colin"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Followers are a status symbol. Increased mine using this site. Worked wonders with no hassles. Thanks, folks!"},{"@type":"Review","author":{"@type":"Person","name":"Kay"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"After an endless search, I finally found a site that gets me followers within minutes! Will be back for more for sure."},{"@type":"Review","author":{"@type":"Person","name":"Stephen"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I was so desperate for followers, just when it seemed undoable; these guys got me what I needed!"},{"@type":"Review","author":{"@type":"Person","name":"Floyd"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"There is something extraordinary about followers increasing in minutes. Buzzoid has me wanting more!"},{"@type":"Review","author":{"@type":"Person","name":"iamcardib"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I recently purchased followers and I could not be happier with the results!"},{"@type":"Review","author":{"@type":"Person","name":"daddyyankee"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"The purchase of followers has finally helped me to improve my business. It really works pretty well!"},{"@type":"Review","author":{"@type":"Person","name":"Kane"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Honestly wasn\u2019t sure if this was the right choice.. but glad I ordered! Quick delivery, superb support and overall positive vibe."},{"@type":"Review","author":{"@type":"Person","name":"Karl Singh"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"The totally safe way of acquiring Instagram followers works like a charm every time. Thanks, Buzz!"},{"@type":"Review","author":{"@type":"Person","name":"Esther"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I am now obsessed with the website and its incredible service. Good job Buzz!"},{"@type":"Review","author":{"@type":"Person","name":"James"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"The safe payment procedure and easy to buy process makes this an extraordinary solution. Thanks a lot!"},{"@type":"Review","author":{"@type":"Person","name":"Rose M"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"The buying of followers from Buzzoid has really helped me a lot. Seriously, the low charge and high quality have amazed me!"},{"@type":"Review","author":{"@type":"Person","name":"Eddie Thompson"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"At first, I was not convinced with the idea. But, soon was really impressed with the service. The followers have really helped my business."},{"@type":"Review","author":{"@type":"Person","name":"Julia"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"A good number of followers can be acquired by just paying a little. I simply love this website! Blows the competition straight out the water."},{"@type":"Review","author":{"@type":"Person","name":"Wilson Gray"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I am really obsessed with the website and its amazing services. Everything was completed literally in a few minutes. LOL. Talk about speed. Cheers fellas!"},{"@type":"Review","author":{"@type":"Person","name":"Diana"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"The followers really worked for me and I am happy to get such amazing service. Thanks, Buzz!"},{"@type":"Review","author":{"@type":"Person","name":"Davidal"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Was looking for IG followers and came across this site. The easy purchase and quick delivery are the USP!"},{"@type":"Review","author":{"@type":"Person","name":"lisaalvarez5"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I have got 1000 followers at just a minimal cost. Really amazing! Thanks a lot, Buzz."},{"@type":"Review","author":{"@type":"Person","name":"Ashley"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I love this! Because of this website I have been able to buy followers and create my online presence."},{"@type":"Review","author":{"@type":"Person","name":"Henry"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Was not really convinced with the idea. But, I tried it out and received unbelievable results! I'm so grateful for finding yous!"},{"@type":"Review","author":{"@type":"Person","name":"James"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Followers to my account have increased a lot and now I am enjoying the popularity. All this has happened because of Buzzoid. Thanks for the easy purchase of followers!"},{"@type":"Review","author":{"@type":"Person","name":"dirganovam"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"These guys are doing an incredible job! Within a single day, I have got all my 1000 followers."},{"@type":"Review","author":{"@type":"Person","name":"Edward Cook"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I was really not sure about the followers. But I still took a chance and bought it and was amazed to see the results. Thanks, Buzzoid!"},{"@type":"Review","author":{"@type":"Person","name":"Steven"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"To improve my online presence I have purchased the followers and now I have become quite popular. It works wonderfully!"},{"@type":"Review","author":{"@type":"Person","name":"Kacem"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Impatient :) !"},{"@type":"Review","author":{"@type":"Person","name":"Adam"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"this rating isnt a bot generated review, i thought it was a scam, i had a few bucks so why not try, and it works haha. good to go"},{"@type":"Review","author":{"@type":"Person","name":"William"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Love this website a lot"},{"@type":"Review","author":{"@type":"Person","name":"Batia_hasan"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Batia_hasan"},{"@type":"Review","author":{"@type":"Person","name":"Cc"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Delivered exactly what it said it would in less than an hour. I\u2019m a happy customer"},{"@type":"Review","author":{"@type":"Person","name":"Joe"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I paid $29.99 for 2500 followers and I haven't received a single new follower. I understand that I may not receive all 2500 but I hope we can get close. Please reply to my e-mail or fulfill my order of 2500 followers. Thank you for your time and help!!"},{"@type":"Review","author":{"@type":"Person","name":"testing"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Just wanna check they are because of the nearly unbroken 5 star reviews."},{"@type":"Review","author":{"@type":"Person","name":"Alex"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"It worked"},{"@type":"Review","author":{"@type":"Person","name":"Aadil"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"8 Ways to Increase Your Instagram Followers Without Following Back"},{"@type":"Review","author":{"@type":"Person","name":"Esther"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I am addicted, it is happening instantly but my only question is it possible to choose your audience? eg country ..."},{"@type":"Review","author":{"@type":"Person","name":"Kirk"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Paid $10 to buy followers. Took several minutes to work, but this is legit!"},{"@type":"Review","author":{"@type":"Person","name":"Javier"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I initially left a 3 star review because after buying 2,500 followers about 200 unfollowed right off the bat. After leaving that review, more followers came in and everything was perfect. It worked as advertised and I've used them again for two of my other businesses. Very happy with the results!"},{"@type":"Review","author":{"@type":"Person","name":"Muhammad Junaid"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I have used their offers and to buy Instagram followers and i like them"},{"@type":"Review","author":{"@type":"Person","name":"Jav"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"We went with the 2500 package and worked within the hour. However, we\u2019ve lost 60 followers so far. Not sure if it\u2019s because IG deleted those accounts or what. So something to lookout for"},{"@type":"Review","author":{"@type":"Person","name":"Aamir"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Bought there service countless times .. They always delivered more than ordered. Thumbs up!!"},{"@type":"Review","author":{"@type":"Person","name":"Lisa Lee"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Worked!"},{"@type":"Review","author":{"@type":"Person","name":"Lalsa"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I was waaay to skeptical,but I gave it a try .After 5mins I got all my new followers,thanks!!"},{"@type":"Review","author":{"@type":"Person","name":"Arvind"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Nice service in low rate they give good followers :)"},{"@type":"Review","author":{"@type":"Person","name":"Angela"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Was skeptical at first, But they delivered right away. Prompt customer service as well."},{"@type":"Review","author":{"@type":"Person","name":"SlickSocials"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"i love you guys! was satisfied"},{"@type":"Review","author":{"@type":"Person","name":"fveitsi"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Worked like a charm."},{"@type":"Review","author":{"@type":"Person","name":"Erin"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Honestly, didn't think it would work. It does. .__. It really works."},{"@type":"Review","author":{"@type":"Person","name":"Raeesah Ganie"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Not gonna lie , I was sceptical. But it really works! Highly reccomend!"},{"@type":"Review","author":{"@type":"Person","name":"Carlos Torres"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I buyed 150 followers and I received instantly I will buy more followers in this site, recommended 100%"},{"@type":"Review","author":{"@type":"Person","name":"Andrea"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Hoping this fantastic service also for FB. Great great JOB!"},{"@type":"Review","author":{"@type":"Person","name":"john"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"The service is great"},{"@type":"Review","author":{"@type":"Person","name":"Har Stanly"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"In total I bought 100k followers! They ALL came! Awesome tool"},{"@type":"Review","author":{"@type":"Person","name":"Ya boy"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I thought it wassen't gonna work but it did!!!"},{"@type":"Review","author":{"@type":"Person","name":"Krassiva Parker"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Just wow. Giddy!"},{"@type":"Review","author":{"@type":"Person","name":"Julie"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Hi. I was skeptical, so I only bought the smallest amount at first. I am really happy to say that I got my followers! It took about 2.5 hours (it wasn't immediate, so don't freak out if your order isn't either) but I got them!"},{"@type":"Review","author":{"@type":"Person","name":"Andrea"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Skeptical at first but the service works!"},{"@type":"Review","author":{"@type":"Person","name":"GREATTTT!!!!"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Works very well. Definitely recommend!"},{"@type":"Review","author":{"@type":"Person","name":"Sharon"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Wow, I ordered and they delivered ! Didn't even have to wait till the next day. Within the hour I had already received all my followers."},{"@type":"Review","author":{"@type":"Person","name":"Kayla"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I was definitely skeptical to how this could work but I received my followers within a few hours. Unfortunately (fortunately) they're real accounts so they can unfollow you however the followers top back up every now and then."},{"@type":"Review","author":{"@type":"Person","name":"Angel"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"i was not sure because so many fake websites but seems good and fast they accept paypal and its not too expensive"},{"@type":"Review","author":{"@type":"Person","name":"Jacob Hutchins"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Surprisingly the mishap took place when I attempted to buy followers the second time. My followers were never delivered but they did try to fix the problem and corresponded with me every step of the way. They are now refunding me the 54.99 and promise to solve this dilemma. THANK YOU BUZZOID!"},{"@type":"Review","author":{"@type":"Person","name":"Ashley C"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"It works I used it 3 times already."},{"@type":"Review","author":{"@type":"Person","name":"James Murnak"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"This was great! Very quick and easy!"},{"@type":"Review","author":{"@type":"Person","name":"Devin Edwards"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I was scared thinking it was a scam like most buy following accounts. So I had bought the cheapest to make sure, got the followers within 2 hours and it was actually 15 more than says given. About to buy the $40 package!!"},{"@type":"Review","author":{"@type":"Person","name":"Devin Edwards"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I was scared thinking it was a scam like most buy following accounts. So I had bought the cheapest to make sure, got the followers within 2 hours and it was actually 15 more than says given. About to buy the $40 package!!"},{"@type":"Review","author":{"@type":"Person","name":"Joe"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"so I've been feeling a little bit depressed lately bc my photos were under appreciated by a lot of people. So I've decided to get a help from Buzzoid and thank god it was not a fucking scam it's real u guys!! v affordable too."},{"@type":"Review","author":{"@type":"Person","name":"jim"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"i was like na, but then now I'm like ya"},{"@type":"Review","author":{"@type":"Person","name":"Josh"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"100% recommend its safe and cheap great service"},{"@type":"Review","author":{"@type":"Person","name":"Matt"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I can't seem to contact you though the customer service. Could someone email me please"},{"@type":"Review","author":{"@type":"Person","name":"C"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Definitely a great service! Thank you!"},{"@type":"Review","author":{"@type":"Person","name":"Bright Joe"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"This service is pretty dope! Glad I bought from here, and it's cheap too. Clash of Guide"},{"@type":"Review","author":{"@type":"Person","name":"wil"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"really didnt think it was gonna work, but i was like fuck it its only 10 dollars. then boom it happened"},{"@type":"Review","author":{"@type":"Person","name":"W"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I used it once and so my follower counter increase....so I bought a few more followers. of the 1100 followers I supposedly purchased my followers increased by 3000. worth it."},{"@type":"Review","author":{"@type":"Person","name":"Ricky"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Best"},{"@type":"Review","author":{"@type":"Person","name":"Jovana"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I am obsessed with this website and their quality! 5/5!"},{"@type":"Review","author":{"@type":"Person","name":"Jessica"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Like everyone else, I was skeptical. Dropped $7, just to check... that was like, 15 minutes ago. I'm already up 30 followers or so."},{"@type":"Review","author":{"@type":"Person","name":"Henry Camacho"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I was really worried about getting into something like this. IM SO GLAD I DECIDED TO GO WITH THIS SITE. Easy, safe (I've used them for a week but so far no identity theft etc.) Just asks for your username which is public anyway. You pay using PAYPAL so that safe too. Obviously nobody wants to out themselves. But after you do it, give em a review so more people can know how awesome this is."},{"@type":"Review","author":{"@type":"Person","name":"Manny"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I was skeptical at first so I spent 7 bucks to test the waters. At first after a hakf hour I only had 5 bew followers so I figured it was bull. Then I realized they trickled in the followers. I got 500 new followers over the course of the next day. It wasn't even remotely suspsious to my friends. They did an absolutely good job. Low key, and quality gaurenttee. Seriously."},{"@type":"Review","author":{"@type":"Person","name":"diana"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"It worked for me! I finally purchased after watching a youtube review."},{"@type":"Review","author":{"@type":"Person","name":"MIller Scott"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"We performed a research experiment and found this site to be the BEST in the market. Quick delivery & Easy to use! Thanks Buzzoid!"},{"@type":"Review","author":{"@type":"Person","name":"cory stricklin"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I have bought followers and likes for my instagram account and it works like a charm everytime! Totally safe and way easy to use. Thanks Buzzoid!"},{"@type":"Review","author":{"@type":"Person","name":"euwjhu"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"pretty good"},{"@type":"Review","author":{"@type":"Person","name":"Alex"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Payed 40 dollars for 5000 fans and got them extremely fast. EACH SINGLE ONE FOLLOWER. I love this website!"},{"@type":"Review","author":{"@type":"Person","name":"James"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Based on other people's reviews, I was also skeptical. Tried it out, took a few minutes and got it all! Thanks Buzz!"},{"@type":"Review","author":{"@type":"Person","name":"Harry Murphy"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"The followers I purchased accelerated my social media marketing efforts. More people follow my account because it looks more popular."},{"@type":"Review","author":{"@type":"Person","name":"Amy Perez"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"I was a skeptical at first but the service provided was great."},{"@type":"Review","author":{"@type":"Person","name":"Johnny C."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"great!"}]}</script>
+<div class="testimonial_group">
+<div class="testimonial">
+<h3 class="rr_title" style="display:none"></h3>
+<div class="clear"></div>
+<span class="rr_date" style="display:none;"><meta content="2021-01-10 18:31:22">
+<time datetime="January 10, 2021">January 10, 2021</time>
+</span>
+<div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="clear"></div>
+<div class="rr_review_text"><span class="drop_cap">“</span><span>Love this app!</span>”</div>
+<div class="rr_review_name">
+<span>- Ellie</span></div>
+<div class="clear"></div>
+</div>
+<div class="testimonial">
+<h3 class="rr_title" style="display:none"></h3>
+<div class="clear"></div>
+<span class="rr_date" style="display:none;"><meta content="2021-01-08 04:12:00">
+<time datetime="January 8, 2021">January 8, 2021</time>
+</span>
+<div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="clear"></div>
+<div class="rr_review_text"><span class="drop_cap">“</span><span>better than all other websites and this one actually works!</span>”</div>
+<div class="rr_review_name">
+<span>- andre</span></div>
+<div class="clear"></div>
+</div>
+<div class="testimonial">
+<h3 class="rr_title" style="display:none"></h3>
+<div class="clear"></div>
+<span class="rr_date" style="display:none;"><meta content="2021-01-05 14:35:46">
+<time datetime="January 5, 2021">January 5, 2021</time>
+</span>
+<div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="clear"></div>
+<div class="rr_review_text"><span class="drop_cap">“</span><span>Great service and like that you’re given a trial before paying!</span>”</div>
+<div class="rr_review_name">
+<span>- Kay</span></div>
+<div class="clear"></div>
+</div>
+<div class="testimonial">
+<h3 class="rr_title" style="display:none"></h3>
+<div class="clear"></div>
+<span class="rr_date" style="display:none;"><meta content="2021-01-03 20:17:33">
+<time datetime="January 3, 2021">January 3, 2021</time>
+</span>
+<div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="clear"></div>
+<div class="rr_review_text"><span class="drop_cap">“</span><span>It actually works and all of them were legit !!</span>”</div>
+<div class="rr_review_name">
+<span>- Jason</span></div>
+<div class="clear"></div>
+</div>
+<div class="testimonial">
+<h3 class="rr_title" style="display:none"></h3>
+<div class="clear"></div>
+<span class="rr_date" style="display:none;"><meta content="2020-12-24 19:20:37">
+<time datetime="December 24, 2020">December 24, 2020</time>
+</span>
+<div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+<div class="clear"></div>
+<div class="rr_review_text"><span class="drop_cap">“</span><span>Really quick and easy</span>”</div>
+<div class="rr_review_name">
+<span>- Bailey</span></div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="all_reviews">
+<a href="#">Show All Reviews</a>
+</div>
+<div class="more_reviews">
+<a href="#">Read More Reviews</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="ftip">
+<div class="ftip-bg"></div>
+<div class="ftip-inner">
+<div class="ftip-close">×</div>
+<p>
+<b>High Quality Followers</b><br>
+These are Followers with profile pictures but no further uploads on their account. Auto-refill is enabled within the warranty.
+</p>
+<p>
+<b>Premium Followers</b><br>
+New Premium followers are for those who are serious about their instagram growth. These are guaranteed with very little to NO drop!
+</p>
+<p>
+<b>Managed Growth</b><br>
+Managed growth is for brands, influencers and agencies looking for followers that engage. This is not an INSTANT service and is aimed at helping users build an authentic audience.
+</p>
+</div>
+</div>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+
+(function() {
+    var fdiff = document.querySelector('.fdiff');
+    var ftip = document.querySelector('.ftip');
+    var tables = document.querySelectorAll('.price_table');
+    var tabs = document.querySelectorAll('.ftabs a');
+
+    fdiff.onclick = function(e) {
+        e.preventDefault();
+        ftip.classList.add('shown');
+        return false;
+    };
+
+    ftip.onclick = function(e) {
+        e.preventDefault();
+        ftip.classList.remove('shown');
+    };
+
+
+    tabs.forEach(function(tab) {
+        tab.onclick = function(e) {
+            e.preventDefault();
+
+            tabs.forEach(function(t) {
+                if(t.attributes['data-target'].value === tab.attributes['data-target'].value) {
+                    if(!t.classList.contains('active')) {
+                        t.classList.add('active');
+                    }
+                } else {
+                    t.classList.remove('active');
+                }
+            });
+
+            tables.forEach(function(tbl) {
+                if(tab.attributes['data-target'].value === tbl.attributes['id'].value) {
+                    if(!tbl.classList.contains('show_table')) {
+                        tbl.classList.add('show_table');
+                    }
+                } else {
+                    tbl.classList.remove('show_table');
+                }
+            });
+            return false;
+        }
+    });
+
+
+
+})();
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+    (function() {
+
+        var reviews = document.querySelector('.list-reviews');
+        var reviewsBody = document.querySelector('.page_reviews');
+        var postId = reviews.getAttribute('data-post');
+
+        var loadBtn = document.querySelector('.list-reviews .all_reviews a');
+        loadBtn.onclick = function() {
+            loadBtn.style.display = 'none';
+
+            var request = new XMLHttpRequest();
+            request.open('GET', '/reviewList.php?post_id=' + postId, true);
+            request.onload = function() {
+                if (this.status >= 200 && this.status < 400) {
+                    var data = JSON.parse(this.response);
+                    var content = '';
+                    if(data && data.length > 0) {
+                        for(var i=0; i < data.length; i++) {
+                            content += data[i];
+                        }
+                        reviewsBody.innerHTML += content;
+                    }
+
+                }
+            };
+            request.send();
+
+            return false;
+        };
+
+    })();
+</script>
+<footer class="footer">
+<div class="footer__inner">
+<div class="shell">
+<a href="https://buzzoid.com/" class="logo" title="Buzzoid">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Buzzoid" data-lazy-src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/logo-footer.svg"><noscript><img src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/logo-footer.svg" alt="Buzzoid"></noscript>
+</a>
+<nav class="nav">
+<ul>
+<li>
+<a href="https://buzzoid.com/">Home</a>
+</li>
+<li>
+<a href="https://buzzoid.com/buy-instagram-likes">Buy Instagram Likes</a>
+</li>
+<li class="current-menu-item">
+<a href="https://buzzoid.com/buy-instagram-followers">Buy Instagram Followers</a>
+</li>
+<li>
+<a href="https://buzzoid.com/buy-instagram-views">Buy Instagram Views</a>
+</li>
+<li>
+<a href="https://buzzoid.com/faq/">FAQ</a>
+</li>
+<li>
+<a href="https://buzzoid.com/free-instagram-likes/">Free Likes</a>
+</li>
+<li>
+<a href="https://buzzoid.com/blog/">Blog</a>
+</li>
+<li>
+<a href="https://buzzoid.com/about-us/">About Us</a>
+</li>
+<li>
+<a href="https://buzzoid.com/authors/">Our Team</a>
+</li>
+<li>
+<a href="https://buzzoid.com/contact-us/">Contact Us</a>
+</li>
+
+</ul>
+</nav>
+<nav class="nav-footer-mobile">
+<ul>
+<li>
+<a href="https://buzzoid.com/">Home</a>
+</li>
+<li>
+<a href="https://buzzoid.com/buy-instagram-likes/">Buy Instagram Likes</a>
+</li>
+<li class="current-menu-item">
+<a href="https://buzzoid.com/buy-instagram-followers/">Buy Instagram Followers</a>
+</li>
+<li>
+<a href="https://buzzoid.com/buy-instagram-views/">Buy Instagram Views</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href="https://buzzoid.com/free-instagram-likes/">Free Likes</a>
+</li>
+<li>
+<a href="https://buzzoid.com/faq/">FAQ</a>
+</li>
+<li>
+<a href="https://buzzoid.com/blog/">Blog</a>
+</li>
+<li>
+<a href="https://buzzoid.com/about-us/">About Us</a>
+</li>
+<li>
+<a href="https://buzzoid.com/authors/">Our Team</a>
+</li>
+<li>
+<a href="https://buzzoid.com/contact-us/">Contact Us</a>
+</li>
+
+</ul>
+</nav>
+</div>
+</div>
+<style>
+.nav-lang {
+  float:left;
+}
+.trp-language-switcher {
+  display:block;
+  margin:0;
+  height: 28px !important;
+}
+.trp-ls-shortcode-current-language {
+  background: transparent !important;
+  border: 0 none !important;
+}
+.trp-ls-shortcode-language {
+  background: transparent !important;
+  border: 0 none !important;
+  display: block !important;
+}
+.trp-language-switcher>div>a {
+  display: inline !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-lang {
+    float:none;
+    margin-bottom:8px;
+  }
+  .nav-brand {
+    clear:both;
+  }
+}
+</style>
+<div class="footer__brands">
+<div class="shell">
+<div class="nav-lang" data-no-translation>
+<div class="trp_language_switcher_shortcode">
+<div class="trp-language-switcher trp-language-switcher-container" data-no-translation>
+<div class="trp-ls-shortcode-current-language">
+<a href="#" class="trp-ls-shortcode-disabled-language trp-ls-disabled-language" title="English" onclick="event.preventDefault()">
+<img class="trp-flag-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E" width="18" height="12" alt="en_US" title="English" data-lazy-src="https://buzzoid.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png"><noscript><img class="trp-flag-image" src="https://buzzoid.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English"></noscript> EN </a>
+</div>
+<div class="trp-ls-shortcode-language">
+<a href="#" class="trp-ls-shortcode-disabled-language trp-ls-disabled-language" title="English" onclick="event.preventDefault()">
+<img class="trp-flag-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E" width="18" height="12" alt="en_US" title="English" data-lazy-src="https://buzzoid.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png"><noscript><img class="trp-flag-image" src="https://buzzoid.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English"></noscript> EN </a>
+<a href="https://buzzoid.com/fr/acheter-instagram-followers/" title="French">
+<img class="trp-flag-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E" width="18" height="12" alt="fr_FR" title="French" data-lazy-src="https://buzzoid.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/fr_FR.png"><noscript><img class="trp-flag-image" src="https://buzzoid.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/fr_FR.png" width="18" height="12" alt="fr_FR" title="French"></noscript> FR </a>
+<a href="https://buzzoid.com/de/instagram-followers-kaufen/" title="German">
+<img class="trp-flag-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E" width="18" height="12" alt="de_DE" title="German" data-lazy-src="https://buzzoid.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/de_DE.png"><noscript><img class="trp-flag-image" src="https://buzzoid.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/de_DE.png" width="18" height="12" alt="de_DE" title="German"></noscript> DE </a>
+<a href="https://buzzoid.com/pt/comprar-seguidores-instagram/" title="Portuguese">
+<img class="trp-flag-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E" width="18" height="12" alt="pt_BR" title="Portuguese" data-lazy-src="https://buzzoid.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/pt_BR.png"><noscript><img class="trp-flag-image" src="https://buzzoid.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/pt_BR.png" width="18" height="12" alt="pt_BR" title="Portuguese"></noscript> PT </a>
+<a href="https://buzzoid.com/nl/instagram-followers-kopen/" title="Dutch">
+<img class="trp-flag-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E" width="18" height="12" alt="nl_NL" title="Dutch" data-lazy-src="https://buzzoid.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/nl_NL.png"><noscript><img class="trp-flag-image" src="https://buzzoid.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/nl_NL.png" width="18" height="12" alt="nl_NL" title="Dutch"></noscript> NL </a>
+</div>
+<script type="rocketlazyloadscript" data-rocket-type="application/javascript">
+        // need to have the same with set from JS on both divs. Otherwise it can push stuff around in HTML
+        var trp_ls_shortcodes = document.querySelectorAll('.trp-language-switcher');
+        if ( trp_ls_shortcodes.length > 0) {
+            // get the last language switcher added
+            var trp_el = trp_ls_shortcodes[trp_ls_shortcodes.length - 1];
+
+            /* Added extra check to not execute width adjustment on the shortcode language switcher placed inside
+             * trp_ald_ls_shortcode_popup Automatic User Language Detection Popup.
+             * A similar script is executed there to adjust width.
+             */
+            if ( ! ( (" " + trp_el.parentNode.className + " ").replace(/[\n\t]/g, " ").indexOf(" trp_ald_ls_shortcode_popup ") > -1 ) ){
+                // above expression is vanilla JS for "does not have CSS class trp_ald_ls_shortcode_popup" in the parent node
+
+                var trp_shortcode_language_item = trp_el.querySelector( '.trp-ls-shortcode-language' )
+                // set width
+                var trp_ls_shortcode_width                                               = trp_shortcode_language_item.offsetWidth + 16;
+                trp_shortcode_language_item.style.width                                  = trp_ls_shortcode_width + 'px';
+                trp_el.querySelector( '.trp-ls-shortcode-current-language' ).style.width = trp_ls_shortcode_width + 'px';
+
+                // We're putting this on display: none after we have its width.
+                trp_shortcode_language_item.style.display = 'none';
+            }
+        }
+    </script>
+</div>
+</div> </div>
+<nav class="nav-brands">
+<ul>
+<li>
+<svg width="42" height="29" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Apple Pay</title><path d="M34.666 1.167H7.327C3.833 1.167 1 3.937 1 7.357V21.96c0 3.418 2.833 6.19 6.327 6.19h27.338c3.495 0 6.328-2.772 6.328-6.19V7.356c0-3.418-2.833-6.19-6.328-6.19Z" fill="#000" stroke="#D7D7D7" stroke-width=".52" /><path d="M7 13.866c.011-.132.018-.264.034-.394.104-.787.422-1.453 1.095-1.913.369-.254.782-.38 1.232-.377.26 0 .502.078.74.168.165.062.33.125.495.185a.706.706 0 0 0 .5 0c.235-.088.47-.177.707-.259.26-.09.527-.145.803-.128.693.042 1.279.3 1.699.875l.025.036.005.013c-.666.459-1.05 1.073-.996 1.904.054.828.503 1.392 1.238 1.76-.029.084-.056.17-.09.255a5.638 5.638 0 0 1-1.066 1.731c-.182.206-.4.369-.674.437-.29.073-.566.02-.838-.09-.167-.069-.334-.145-.508-.191-.398-.107-.787-.058-1.167.099-.172.07-.346.142-.526.19-.381.104-.71-.016-1.002-.267-.265-.228-.47-.51-.669-.794a5.831 5.831 0 0 1-.933-2.198 4.584 4.584 0 0 1-.095-.784c-.001-.028-.007-.055-.009-.082v-.176Zm5.641-4.967c.018.233.002.462-.067.686-.193.639-.574 1.114-1.205 1.367-.19.078-.39.11-.608.09 0-.1-.01-.2.001-.3.06-.53.295-.971.688-1.326a2.013 2.013 0 0 1 1.073-.506c.01-.001.02-.007.031-.011h.087Zm4.414.653h.064c1.058 0 2.115-.003 3.173 0 .571.003 1.109.133 1.594.444.544.35.904.84 1.082 1.46.2.696.188 1.391-.086 2.065-.345.852-.988 1.366-1.873 1.588-.254.064-.513.09-.774.09-.591-.002-1.183 0-1.774 0h-.071v2.927h-1.334l-.001-8.575Zm1.332 4.524c.02.001.035.004.049.004h1.492c.234 0 .465-.026.69-.092.52-.153.878-.477 1.033-1.003.116-.39.116-.786.012-1.178a1.385 1.385 0 0 0-.737-.92 1.88 1.88 0 0 0-.826-.202c-.554-.01-1.109-.007-1.663-.008-.015 0-.032.002-.05.004v3.395Zm9.096.34c-.012-.245-.004-.488-.04-.723a.857.857 0 0 0-.593-.711c-.436-.157-.878-.163-1.308.025a.99.99 0 0 0-.595.704c-.003.014-.024.032-.037.033-.384.002-.768.002-1.152.002-.006 0-.01-.004-.02-.006a1.77 1.77 0 0 1 .096-.505c.17-.478.499-.818.937-1.06.364-.2.759-.305 1.174-.335.501-.038.993.005 1.468.177.4.146.743.373.995.722.207.287.314.61.34.961.006.092.006.183.006.276v4.153h-1.236v-1.02a.076.076 0 0 0-.014-.006c-.009.011-.02.02-.027.033-.317.549-.804.866-1.41 1.002a2.46 2.46 0 0 1-1.623-.167c-.57-.268-.912-.72-1-1.346-.057-.4-.008-.787.206-1.141.176-.29.432-.49.734-.636.297-.145.614-.235.941-.271.377-.042.756-.064 1.135-.09.319-.023.637-.04.957-.06l.066-.011Zm-.01.903c-.044.004-.078.008-.113.01-.515.034-1.03.064-1.543.102-.219.016-.43.07-.629.166-.424.209-.531.599-.424.96.08.27.28.438.539.523.549.178 1.08.127 1.573-.183.29-.183.48-.45.56-.786.061-.26.027-.524.037-.792Zm1.801-3.412h.06c.424 0 .849.001 1.272-.001.047 0 .064.015.078.06a4268.696 4268.696 0 0 0 1.553 5.009l.016.001c.007-.016.017-.032.023-.048l.477-1.542 1.06-3.425c.013-.042.03-.055.075-.055.412.002.823 0 1.234 0h.063l-.042.123-2.314 6.485c-.132.37-.289.728-.508 1.057a1.887 1.887 0 0 1-1.4.86c-.325.04-.649.04-.973.008-.029-.002-.054-.003-.054-.045l.002-.974c0-.004.002-.007.006-.018.043.003.087.007.132.009.193.011.385.019.575-.02a.923.923 0 0 0 .63-.467c.108-.185.16-.393.234-.591a.483.483 0 0 0-.007-.361c-.727-1.999-1.449-4-2.172-5.999-.008-.019-.012-.04-.02-.066Z" fill="#FFF" /></svg>
+</li>
+<li>
+<svg width="42" height="29" fill="none" xmlns="http://www.w3.org/2000/svg"><title>American Express</title><path d="M34.666 1H7.327C3.833 1 1 3.772 1 7.19v14.6c0 3.418 2.833 6.19 6.327 6.19h27.338c3.495 0 6.328-2.772 6.328-6.19V7.19c0-3.417-2.833-6.19-6.328-6.19h.001Z" fill="#26A6D1" stroke="#D7D7D7" stroke-width=".52" /><path d="m8.142 10.343-3.748 8.3h4.487l.557-1.324h1.271l.556 1.324h4.94v-1.01l.44 1.01h2.554l.44-1.032v1.032h10.272l1.25-1.29 1.169 1.29 5.276.01-3.76-4.137 3.76-4.173h-5.194l-1.216 1.265-1.133-1.265H18.89l-.96 2.142-.982-2.142H12.47v.976l-.498-.976h-3.83Zm.869 1.179h2.187l2.486 5.628v-5.628h2.396L18 15.557l1.77-4.035h2.384v5.955h-1.45l-.012-4.667-2.115 4.667h-1.298l-2.127-4.667v4.667h-2.984l-.566-1.335H8.546l-.565 1.334H6.382l2.629-5.954Zm14.47 0h5.899l1.804 1.95 1.862-1.95h1.804l-2.74 2.993 2.74 2.959h-1.886L31.16 15.5l-1.871 1.973H23.48v-5.952Zm-13.406 1.007-1.007 2.379h2.013l-1.006-2.379Zm14.863.226v1.087h3.218v1.212h-3.218v1.187h3.61l1.677-1.749-1.607-1.738h-3.68Z" fill="#fff" /></svg>
+</li>
+<li>
+<svg width="42" height="29" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Visa Card</title><path d="M34.666 1H7.327C3.833 1 1 3.772 1 7.19v14.604c0 3.418 2.833 6.19 6.327 6.19h27.338c3.495 0 6.328-2.772 6.328-6.19V7.19c0-3.418-2.833-6.19-6.328-6.19Z" fill="#FFF" stroke="#D7D7D7" stroke-width=".52" /><path fill-rule="evenodd" clip-rule="evenodd" d="M13.24 19.195h-2.392L9.055 12.5c-.086-.308-.266-.58-.532-.709a7.909 7.909 0 0 0-2.193-.708v-.258h3.854c.531 0 .93.387.997.837l.93 4.83 2.391-5.667h2.326l-3.588 8.37Zm4.917 0h-2.259l1.86-8.37h2.26l-1.86 8.37Zm4.782-6.052c.067-.451.466-.709.931-.709a4.29 4.29 0 0 1 2.193.386l.399-1.802a5.832 5.832 0 0 0-2.06-.387c-2.193 0-3.788 1.16-3.788 2.768 0 1.224 1.13 1.867 1.928 2.254.863.386 1.195.644 1.129 1.03 0 .58-.665.837-1.329.837a5.803 5.803 0 0 1-2.325-.516l-.4 1.803c.798.322 1.662.451 2.46.451 2.458.064 3.986-1.094 3.986-2.833 0-2.189-3.124-2.317-3.124-3.282Zm11.031 6.052-1.793-8.37H30.25c-.399 0-.798.258-.93.644l-3.323 7.726h2.326l.464-1.223h2.858l.266 1.223h2.06Zm-3.388-6.117.663 3.154h-1.86l1.197-3.154Z" fill="#172B85" /></svg>
+</li>
+<li>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="29" width="42"><title>MasterCard</title><path d="M34.79 1H7.453C3.958 1 1.125 3.771 1.125 7.19v14.603c0 3.419 2.833 6.19 6.327 6.19H34.79c3.495 0 6.328-2.771 6.328-6.19V7.19c0-3.42-2.833-6.19-6.328-6.19Z" fill="#FFF" stroke="#D7D7D7" stroke-width=".52" /><path fill-rule="evenodd" clip-rule="evenodd" d="M26.315 22.252c4.247 0 7.69-3.411 7.69-7.619 0-4.207-3.443-7.618-7.69-7.618a7.701 7.701 0 0 0-4.99 1.822A7.701 7.701 0 0 0 16.34 7.02c-4.247 0-7.69 3.41-7.69 7.618s3.443 7.619 7.69 7.619a7.702 7.702 0 0 0 4.99-1.823 7.701 7.701 0 0 0 4.985 1.818Z" fill="#ED0006" /><path fill-rule="evenodd" clip-rule="evenodd" d="M21.334 20.429a7.574 7.574 0 0 0 .001-11.597 7.573 7.573 0 0 0-.001 11.597Z" fill="#FF603C" /><path fill-rule="evenodd" clip-rule="evenodd" d="M21.33 20.432a7.574 7.574 0 0 0 0-11.597 7.701 7.701 0 0 1 4.988-1.82c4.246 0 7.69 3.41 7.69 7.618s-3.444 7.619-7.69 7.619a7.702 7.702 0 0 1-4.988-1.82Z" fill="#F9A000" /></svg>
+</li>
+<li>
+<svg width="41" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Diners Club Card</title><path d="M34.027.452H6.689C3.194.452.36 3.223.36 6.642v14.604c0 3.418 2.833 6.19 6.328 6.19h27.338c3.494 0 6.327-2.772 6.327-6.19V6.642c0-3.419-2.833-6.19-6.327-6.19Z" fill="#FDFDFD" stroke="#D7D7D7" stroke-width=".52" /><path fill-rule="evenodd" clip-rule="evenodd" d="M18.729 22.22h2.912c4.545 0 8.168-3.548 8.31-7.931v-.07c-.071-4.453-3.765-8.07-8.31-8.001h-3.267c-4.332.14-7.74 3.757-7.598 8.07 0 4.314 3.55 7.863 7.953 7.932Zm-6.533-8c0-3.618 3.053-6.61 6.746-6.61 3.693 0 6.747 2.992 6.747 6.61 0 3.618-3.054 6.61-6.747 6.61s-6.746-2.992-6.746-6.61Zm7.812 4.452V9.836c2.485.627 4.047 3.062 3.409 5.497-.426 1.67-1.705 2.922-3.41 3.34Zm-5.469-5.566c-.639 2.435.852 4.94 3.338 5.566V9.836c-1.634.418-2.912 1.67-3.338 3.27Z" fill="#1B79BE" /></svg>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="footer__copyright">
+<div class="shell">
+<a href="https://buzzoid.com/" class="logo" title="Buzzoid">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Buzzoid" data-lazy-src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/logo-footer.svg"><noscript><img src="https://buzzoid.com/wp-content/themes/buzz/v2/assets/images/temp/logo-footer.svg" alt="Buzzoid"></noscript>
+</a>
+<p>Copyright &copy; 2023 Buzzoid. All Rights Reserved. <a href="https://buzzoid.com/terms-of-service/">Terms of Service</a> / <a href="https://buzzoid.com/privacy-policy/">Privacy Policy</a></p>
+</div>
+</div>
+</footer>
+</div>
+<script type="rocketlazyloadscript" data-minify="1" src="https://buzzoid.com/wp-content/cache/min/1/embed/sdk.latest.js?ver=1682121842" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" async src="https://buzzoid.com/wp-content/cache/min/1/wp-content/themes/buzz/v2/assets/js/bundle.js?ver=1682121842"></script>
+<script type="rocketlazyloadscript" data-minify="1" async src="https://buzzoid.com/wp-content/cache/min/1/wp-content/themes/buzz/v2/assets/js/additions.js?ver=1682121842"></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/buy-instagram-views\/|\/author\/|\/authors\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/buzzoid.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://buzzoid.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>
+<script type="rocketlazyloadscript" id="rocket-fix" data-rocket-type="text/javascript">
+/*
+if(navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+    window.onload = function() {
+        setTimeout(function() {
+            window.dispatchEvent(new Event('touchend'));
+        }, 200)
+    }
+}
+*/
+</script>
+<script>"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link data-minify="1" rel="stylesheet" type="text/css" href="https://buzzoid.com/wp-content/cache/min/1/wp-content/themes/buzz/v2/assets/css/bundle_v2.css?ver=1682121842"><link data-minify="1" rel="stylesheet" type="text/css" href="https://buzzoid.com/wp-content/cache/min/1/wp-content/themes/buzz/v2/assets/css/all.css?ver=1682121842"><link data-minify="1" rel="stylesheet" type="text/css" href="https://buzzoid.com/wp-content/cache/min/1/wp-content/themes/buzz/v2/assets/css/changes.css?ver=1682121842"><link rel='stylesheet' id='classic-theme-styles-css' href='https://buzzoid.com/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='trp-language-switcher-style-css' href='https://buzzoid.com/wp-content/cache/min/1/wp-content/plugins/translatepress-multilingual/assets/css/trp-language-switcher.css?ver=1682121842' type='text/css' media='all' /><link rel='stylesheet' id='ez-toc-css' href='https://buzzoid.com/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.42' type='text/css' media='all' /></noscript></body>
+</html>
